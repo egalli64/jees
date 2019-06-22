@@ -23,7 +23,9 @@ public class Timer extends HttpServlet {
             writer.println("<!DOCTYPE html><html>");
             writer.println("<head><meta charset=\"utf-8\">");
             writer.println("<title>Hello Servlet</title></head>");
-            writer.println("<body><h1>" + LocalTime.now() + "</h1>");
+            writer.println("<body>");
+            writer.println("<h1>" + LocalTime.now() + "</h1>");
+            writer.println("<a href=\"..\">" + "back home" + "</a>");
             writer.println("</body></html>");
         }
     }
