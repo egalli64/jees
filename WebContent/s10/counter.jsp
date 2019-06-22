@@ -6,12 +6,13 @@
 <title>Hello JSP</title>
 </head>
 <body>
-    <%!int count = 0;%>
+    <%!int unreliableCounter = 0;%>
     <h1>
         <%
-            out.print("Count was " + count);
+            out.print("Counter was " + unreliableCounter);
         %>
-        now is <%=++count%>
+        now is
+        <%=++unreliableCounter%>
     </h1>
     <a href="..">back home</a>
 </body>
