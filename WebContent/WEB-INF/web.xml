@@ -11,4 +11,12 @@
         <param-name>admin</param-name>
         <param-value>Tom</param-value>
     </context-param>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/s17/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/s17/500.jsp</location>
+    </error-page>
 </web-app>
