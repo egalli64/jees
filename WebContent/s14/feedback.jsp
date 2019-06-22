@@ -8,7 +8,7 @@
 <body>
     <p>Your name is ${name}</p>
     <p>Selected colors are ${colors}</p>
-    
+
     <a href="..">Back home</a>
 </body>
 </html>
