@@ -6,6 +6,7 @@
 <title>Hello JSP</title>
 </head>
 <body>
+    <%-- Just as example --%>
     <%!int unreliableCounter = 0;%>
     <h1>
         <%
