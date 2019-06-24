@@ -1,6 +1,8 @@
 package s09;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.time.LocalTime;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,8 +25,12 @@ public class Greeter2 extends HttpServlet {
 
         HttpSession session = request.getSession();
         if (session.isNew()) {
-            request.setAttribute("message", "Welcome");
+            session.setAttribute("start", LocalTime.now());
+            request.setAttribute("duration", Duration.ZERO);
         } else {
+            Duration duration = Duration.between((LocalTime) session.getAttribute("start"), LocalTime.now());
+            request.setAttribute("duration", duration);
+
             if (request.getParameter("done") != null) {
                 invalidate = true;
             } else {

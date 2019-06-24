@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page import="java.time.Duration"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,13 @@
 <title>Feedback</title>
 </head>
 <body>
-    <h1><%= request.getAttribute("message") %></h1>
+    <h1>The greeter page</h1>
+
+    <p>
+        <%
+            Duration duration = (Duration) request.getAttribute("duration");
+            out.print("Your session started " + duration.getSeconds() + " seconds ago");
+        %>
+    </p>
 </body>
 </html>
