@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,6 @@
 </head>
 <body>
     <h1>The web app started at ${applicationScope.start}</h1>
-
-    <a href="..">Back home</a>
+    <a href="<c:url value='/' />">Back home</a>
 </body>
 </html>
