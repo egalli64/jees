@@ -12,7 +12,7 @@
     <p>
         <%
             Duration duration = (Duration) request.getAttribute("duration");
-            out.print("Your session started " + duration.getSeconds() + " seconds ago");
+            out.print("You started working on this stuff " + duration.getSeconds() + " seconds ago");
         %>
     </p>
 </body>

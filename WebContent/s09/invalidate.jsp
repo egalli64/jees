@@ -12,7 +12,7 @@
         session.invalidate();
 
         Duration duration = (Duration) request.getAttribute("duration");
-        out.print("Your session lasted " + duration.getSeconds() + " seconds");
+        out.print("You worked on this stuff for " + duration.getSeconds() + " seconds");
     %>
 </body>
 </html>

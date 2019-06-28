@@ -40,7 +40,7 @@ public class Greeter extends HttpServlet {
                 writer.println("<head><meta charset=\"utf-8\">");
                 writer.println("<title>So long</title></head>");
                 writer.println("<body><h1>Goodbye</h1>");
-                writer.println("<p>Your session lasted " + duration.getSeconds() + " seconds</p>");
+                writer.println("<p>You worked on this stuff for " + duration.getSeconds() + " seconds</p>");
                 writer.println("</body></html>");
             }
             return;
