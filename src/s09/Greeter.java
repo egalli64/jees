@@ -13,40 +13,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class More
- */
 @WebServlet("/s09/greeter")
 public class Greeter extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Duration duration;
-
         HttpSession session = request.getSession();
-        if (session.isNew()) {
+        LocalTime start = (LocalTime) session.getAttribute("start");
+
+        Duration duration;
+        if (start == null) {
             duration = Duration.ZERO;
             session.setAttribute("start", LocalTime.now());
         } else {
-            LocalTime start = (LocalTime) session.getAttribute("start");
             duration = Duration.between(start, LocalTime.now());
+        }
 
-            if (request.getParameter("done") != null) {
-                session.invalidate();
+        if (request.getParameter("done") != null) {
+            session.invalidate();
 
-                response.setContentType("text/html");
-                response.setCharacterEncoding("utf-8");
-                try (PrintWriter writer = response.getWriter()) {
-                    writer.println("<!DOCTYPE html><html>");
-                    writer.println("<head><meta charset=\"utf-8\">");
-                    writer.println("<title>So long</title></head>");
-                    writer.println("<body><h1>Goodbye</h1>");
-                    writer.println("<p>Your session lasted " + duration.getSeconds() + " seconds</p>");
-                    writer.println("</body></html>");
-                }
-                return;
+            response.setContentType("text/html");
+            response.setCharacterEncoding("utf-8");
+            try (PrintWriter writer = response.getWriter()) {
+                writer.println("<!DOCTYPE html><html>");
+                writer.println("<head><meta charset=\"utf-8\">");
+                writer.println("<title>So long</title></head>");
+                writer.println("<body><h1>Goodbye</h1>");
+                writer.println("<p>Your session lasted " + duration.getSeconds() + " seconds</p>");
+                writer.println("</body></html>");
             }
+            return;
         }
 
         request.setAttribute("duration", duration);

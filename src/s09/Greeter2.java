@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class More
- */
 @WebServlet("/s09/greeter2")
 public class Greeter2 extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -24,18 +21,21 @@ public class Greeter2 extends HttpServlet {
         boolean invalidate = false;
 
         HttpSession session = request.getSession();
-        if (session.isNew()) {
-            session.setAttribute("start", LocalTime.now());
-            request.setAttribute("duration", Duration.ZERO);
+        Duration duration;
+        LocalTime start = (LocalTime) session.getAttribute("start");
+        if (start != null) {
+            duration = Duration.between(start, LocalTime.now());
         } else {
-            Duration duration = Duration.between((LocalTime) session.getAttribute("start"), LocalTime.now());
-            request.setAttribute("duration", duration);
+            duration = Duration.ZERO;
+            session.setAttribute("start", LocalTime.now());
+        }
 
-            if (request.getParameter("done") != null) {
-                invalidate = true;
-            } else {
-                request.setAttribute("message", "Welcome back");
-            }
+        request.setAttribute("duration", duration);
+
+        if (request.getParameter("done") != null) {
+            invalidate = true;
+        } else {
+            request.setAttribute("message", "Welcome back");
         }
 
         RequestDispatcher rd = request.getRequestDispatcher( //
