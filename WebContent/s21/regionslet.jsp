@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -22,9 +21,9 @@
             <th>name</th>
         </tr>
         <%
-            while(rs.next()) {
+            while (rs.next()) {
                 out.print("<tr><td>" + rs.getString("REGION_ID") + "</td>");
-                out.print("<td>" + rs.getString("REGION_NAME") + "</td></tr>");                
+                out.print("<td>" + rs.getString("REGION_NAME") + "</td></tr>");
             }
         %>
     </table>
