@@ -30,7 +30,11 @@ public class Greeter extends HttpServlet {
             duration = Duration.between(start, LocalTime.now());
         }
 
-        if (request.getParameter("done") != null) {
+        if (request.getParameter("done") == null) {
+            request.setAttribute("duration", duration);
+            RequestDispatcher rd = request.getRequestDispatcher("/s09/greeter.jsp");
+            rd.forward(request, response);
+        } else {
             session.invalidate();
 
             response.setContentType("text/html");
@@ -43,12 +47,7 @@ public class Greeter extends HttpServlet {
                 writer.println("<p>You worked on this stuff for " + duration.getSeconds() + " seconds</p>");
                 writer.println("</body></html>");
             }
-            return;
         }
-
-        request.setAttribute("duration", duration);
-        RequestDispatcher rd = request.getRequestDispatcher("/s09/greeter.jsp");
-        rd.forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
