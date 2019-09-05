@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Hello!</h1>
-    <p>
+    <p id="result">
         The user name
         <%
             @SuppressWarnings("unchecked")
