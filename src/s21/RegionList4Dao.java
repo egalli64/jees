@@ -1,7 +1,6 @@
 package s21;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
