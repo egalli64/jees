@@ -24,6 +24,7 @@ public class RegionList4Dao extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // dirty patch, while delving in resource annotation not working anymore
         if (ds == null) {
             try {
                 Context envContext = (Context) (new InitialContext().lookup("java:/comp/env"));
