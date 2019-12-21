@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 <%
-    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", "hr", "hr");
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/me?serverTimezone=Europe/Rome", "me", "password");
     Statement stmt = conn.createStatement();
     ResultSet rs = stmt.executeQuery("select * from regions");
 %>
