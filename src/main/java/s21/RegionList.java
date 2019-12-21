@@ -18,13 +18,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/s21/regions")
 public class RegionList extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private static final String URL = "jdbc:mysql://localhost:3306/me?serverTimezone=Europe/Rome";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Connection conn;
         try {
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", "hr", "hr");
+            conn = DriverManager.getConnection(URL, "me", "password");
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select * from regions");
 
@@ -36,9 +37,9 @@ public class RegionList extends HttpServlet {
             request.setAttribute("regions", regions);
         } catch (SQLException se) {
             se.printStackTrace();
-            throw new IllegalStateException("Database issue " + se.getMessage());
+            throw new IllegalStateException("Database issue: " + se.getMessage());
         }
-        
+
         request.getRequestDispatcher("/s21/regions2.jsp").forward(request, response);
     }
 

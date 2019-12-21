@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<sql:query dataSource="jdbc/hr" var="countries">select country_id, country_name from countries c natural join regions r where r.region_id = 1 order by 1</sql:query>
+<sql:query dataSource="jdbc/me" var="countries">select country_id, country_name from countries c natural join regions r where r.region_id = 1 order by 1</sql:query>
 <title>HR Regions</title>
 </head>
 <body>
