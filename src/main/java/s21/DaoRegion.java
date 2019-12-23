@@ -1,5 +1,7 @@
 package s21;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +11,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-public class DaoRegion {
+public class DaoRegion implements Closeable {
     private Connection conn;
 
     public DaoRegion(DataSource ds) {
@@ -35,5 +37,14 @@ public class DaoRegion {
         }
 
         return results;
+    }
+
+    @Override
+    public void close() throws IOException {
+        try {
+            conn.close();
+        } catch (SQLException se) {
+            throw new IllegalStateException("Database issue " + se.getMessage());
+        }
     }
 }

@@ -34,9 +34,10 @@ public class RegionList4Dao extends HttpServlet {
             }
         }
 
-        DaoRegion dao = new DaoRegion(ds);
-        request.setAttribute("regions", dao.getAll());
-        request.getRequestDispatcher("/s21/regions2.jsp").forward(request, response);
+        try (DaoRegion dao = new DaoRegion(ds)) {
+            request.setAttribute("regions", dao.getAll());
+            request.getRequestDispatcher("/s21/regions2.jsp").forward(request, response);
+        }
     }
 
     @Override
