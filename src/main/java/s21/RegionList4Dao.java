@@ -26,6 +26,7 @@ public class RegionList4Dao extends HttpServlet {
 
         // dirty patch, while delving in resource annotation not working anymore
         if (ds == null) {
+            System.err.println("*** dirty patch ***");
             try {
                 Context envContext = (Context) (new InitialContext().lookup("java:/comp/env"));
                 ds = (DataSource) envContext.lookup("jdbc/me");
