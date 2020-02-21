@@ -27,11 +27,11 @@ public class RegionList extends HttpServlet {
         try {
             conn = DriverManager.getConnection(URL, "me", "password");
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from regions");
+            ResultSet rs = stmt.executeQuery("select REGION_ID, REGION_NAME from regions");
 
             List<Region> regions = new ArrayList<>();
             while (rs.next()) {
-                regions.add(new Region(rs.getLong("REGION_ID"), rs.getString("REGION_NAME")));
+                regions.add(new Region(rs.getLong(1), rs.getString(2)));
             }
 
             request.setAttribute("regions", regions);
