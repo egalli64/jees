@@ -2,47 +2,51 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Slide 8</title>
-<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-        $('#btnCheck').click(function() {
-        	let target = 's08/checker?user=' + $('#name').val() + ' #result';
-            $('#pResult').load(target);
-        });
-
-        $('#btnCheck2').click(function() {
-        	let target = 's08/checker2?user=' + $('#name').val();
-            $('#pResult2').load(target);
-        });
-    });
-</script>
+<title>Servlet &amp; JSP</title>
 </head>
 <body>
     <h1>Servlet &amp; JSP</h1>
 
     <p>
-        Back to <a href=".\index.html">home</a>
+        Back <a href="index.html">home</a>
     </p>
 
-	<form action="s08/checker">
-		<label>User: <input name="user"></label>
-		<button>Go!</button>
-	</form>
+    <form action="s08/checker">
+        <label>User: <input name="user"></label>
+        <button>Go!</button>
+    </form>
 
-	<hr>
-	
-	<div>
-		<label>User: <input id="name"></label>
-		<button id="btnCheck">Go!</button>
-		<p id="pResult"></p>
-	</div>
+    <hr>
 
-	<hr>
-	
-	<div>
-		<button id="btnCheck2">Go!</button>
-		<p id="pResult2"></p>
-	</div>
+    <div>
+        <label>User: <input id="name"></label>
+        <button id="btnCheck">Go!</button>
+        <p id="target"></p>
+    </div>
+
+    <script type="text/javascript">
+        function callback() {
+            if (this.readyState == XMLHttpRequest.DONE) {        
+                let target = document.getElementById('target');
+                
+                if (this.status != 200) {
+                    target.textContent = "[Something went wrong: " + this.status + "]\n";
+                    return;
+                }
+            
+                target.textContent = this.responseText;
+            }
+        }
+
+        document.getElementById('btnCheck').onclick = () => {
+            let name = document.getElementById('name');
+            let target = 's08/checker2?user=' + name.value;
+    
+            let request = new XMLHttpRequest();
+            request.onload = callback;
+            request.open('GET', target);
+            request.send();
+        };
+	</script>
 </body>
 </html>
