@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +6,7 @@
 <title>Hello JSP</title>
 </head>
 <body>
+    <%@include file="header.html"%>
     <%-- Just as example --%>
     <%!int unreliableCounter = 0;%>
     <h1>
@@ -15,6 +16,6 @@
         now is
         <%=++unreliableCounter%>
     </h1>
-    <a href="..">back home</a>
+    <%@include file="footer.html"%>
 </body>
 </html>
