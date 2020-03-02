@@ -23,12 +23,9 @@ public class RegionList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Connection conn;
-        try {
-            conn = DriverManager.getConnection(URL, "me", "password");
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select REGION_ID, REGION_NAME from regions");
-
+        try (Connection conn = DriverManager.getConnection(URL, "me", "password");
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery("select REGION_ID, REGION_NAME from regions")) {
             List<Region> regions = new ArrayList<>();
             while (rs.next()) {
                 regions.add(new Region(rs.getLong(1), rs.getString(2)));

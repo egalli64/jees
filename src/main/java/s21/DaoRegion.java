@@ -25,9 +25,8 @@ public class DaoRegion implements Closeable {
     public List<Region> getAll() {
         List<Region> results = new ArrayList<>();
 
-        try {
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from regions");
+        try (Statement stmt = conn.createStatement(); //
+                ResultSet rs = stmt.executeQuery("select * from regions")) {
 
             while (rs.next()) {
                 results.add(new Region(rs.getLong("REGION_ID"), rs.getString("REGION_NAME")));
