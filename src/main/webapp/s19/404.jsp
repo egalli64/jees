@@ -5,9 +5,10 @@
 <head>
 <meta charset="utf-8">
 <title>Page not found</title>
+<base href="/mdwa/">
 </head>
 <body>
     <h1>404!</h1>
-    <a href="/mdwat/">The mdwat home page</a>
+    <p>Back <a href=".">home</a></p>
 </body>
 </html>

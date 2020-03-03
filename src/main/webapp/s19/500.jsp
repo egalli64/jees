@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Error page</title>
+<base href="/mdwa/">
 </head>
 <body>
     <h1>Internal error</h1>
@@ -14,7 +15,6 @@
     </div>
     
     <p>For more details, ask ${initParam.admin}</p>
-
-    <a href="/mdwat/">The mdwat home page</a>
+    <p>Back <a href=".">home</a></p>
 </body>
 </html>
