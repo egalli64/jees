@@ -1,6 +1,7 @@
-package s13;
+package s16;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,33 +10,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dd.User;
-
-@WebServlet("/s13/fetch")
-public class Fetcher extends HttpServlet {
+@WebServlet("/s16/process")
+public class FormProcess extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
-        if (name == null) {
-            name = "Tom";
-        }
-        Integer id;
-        try {
-            String param = request.getParameter("id");
-            if (param == null) {
-                id = 0;
-            } else {
-                id = Integer.valueOf(param);
-            }
-        } catch (Exception e) {
-            id = 1;
+        if (name != null && !name.isEmpty()) {
+            request.setAttribute("name", name);
+        } else {
+            request.setAttribute("name", "missing");
         }
 
-        request.setAttribute("user", new User(name, id));
+        String[] colors = request.getParameterValues("color");
+        if (colors != null) {
+            request.setAttribute("colors", Arrays.asList(colors));
+        } else {
+            request.setAttribute("colors", "missing");
+        }
 
-        RequestDispatcher rd = request.getRequestDispatcher("/s13/fetch.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/s16/feedback.jsp");
         rd.forward(request, response);
     }
 

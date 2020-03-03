@@ -11,7 +11,7 @@
         Back <a href="index.html">home</a>
     </p>
 
-    <form action="s08/checker">
+    <form action="s10/checker">
         <label>User: <input name="user"></label>
         <button>Go!</button>
     </form>
@@ -40,7 +40,7 @@
 
         document.getElementById('btnCheck').onclick = () => {
             let name = document.getElementById('name');
-            let target = 's08/checker2?user=' + name.value;
+            let target = 's10/checker2?user=' + name.value;
     
             let request = new XMLHttpRequest();
             request.onload = callback;

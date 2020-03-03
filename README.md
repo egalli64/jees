@@ -1,4 +1,8 @@
-# mdwat
-Maven Dynamic Web App on Tomcat
+# mdwa
+Maven Dynamic Web App
 
-Remember to add the right JDBC driver as an Application Server dependency!
+Introduction to Java EE
+
+Tested on
+- Tomcat 9
+- WildFly 18

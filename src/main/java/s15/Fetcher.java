@@ -1,4 +1,4 @@
-package s13;
+package s15;
 
 import java.io.IOException;
 
@@ -9,33 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dd.Document;
 import dd.User;
 
-@WebServlet("/s13/fetch")
+@WebServlet("/s15/fetch")
 public class Fetcher extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        if (name == null) {
-            name = "Tom";
-        }
-        Integer id;
-        try {
-            String param = request.getParameter("id");
-            if (param == null) {
-                id = 0;
-            } else {
-                id = Integer.valueOf(param);
-            }
-        } catch (Exception e) {
-            id = 1;
-        }
+        request.setAttribute("doc", new Document("JSP Cheatsheet", new User("Tom", 42)));
 
-        request.setAttribute("user", new User(name, id));
-
-        RequestDispatcher rd = request.getRequestDispatcher("/s13/fetch.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/s15/fetch.jsp");
         rd.forward(request, response);
     }
 

@@ -1,6 +1,8 @@
-package s13;
+package s10;
 
 import java.io.IOException;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,36 +11,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dd.User;
-
-@WebServlet("/s13/fetch")
-public class Fetcher extends HttpServlet {
+@WebServlet("/s10/checker")
+public class Checker extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        if (name == null) {
-            name = "Tom";
-        }
-        Integer id;
-        try {
-            String param = request.getParameter("id");
-            if (param == null) {
-                id = 0;
-            } else {
-                id = Integer.valueOf(param);
+        String user = request.getParameter("user");
+        Set<Character> set = new TreeSet<>();
+        if (user != null) {
+            for (char c : user.toCharArray()) {
+                set.add(Character.toLowerCase(c));
             }
-        } catch (Exception e) {
-            id = 1;
         }
+        request.setAttribute("set", set);
 
-        request.setAttribute("user", new User(name, id));
-
-        RequestDispatcher rd = request.getRequestDispatcher("/s13/fetch.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/s10/checker.jsp");
         rd.forward(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);

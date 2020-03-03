@@ -1,4 +1,4 @@
-package s13;
+package s21;
 
 import java.io.IOException;
 
@@ -11,31 +11,28 @@ import javax.servlet.http.HttpServletResponse;
 
 import dd.User;
 
-@WebServlet("/s13/fetch")
-public class Fetcher extends HttpServlet {
+/**
+ * Servlet implementation class ListUsers
+ */
+@WebServlet("/s21/loops")
+public class Loops extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        if (name == null) {
-            name = "Tom";
-        }
-        Integer id;
-        try {
-            String param = request.getParameter("id");
-            if (param == null) {
-                id = 0;
-            } else {
-                id = Integer.valueOf(param);
-            }
-        } catch (Exception e) {
-            id = 1;
-        }
+        User[] users = new User[] { new User("Alpha", 1), new User("Beta", 2), new User("Gamma", 3) };
+        request.setAttribute("users", users);
 
-        request.setAttribute("user", new User(name, id));
+        Double[] values = new Double[12]; // ...
+        for (int i = 0; i < values.length; i++) {
+            values[i] = Math.random();
+        }
+        request.setAttribute("values", values);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/s13/fetch.jsp");
+        String names = "bob,tom,bill";
+        request.setAttribute("names", names);
+
+        RequestDispatcher rd = request.getRequestDispatcher("/s21/loops.jsp");
         rd.forward(request, response);
     }
 

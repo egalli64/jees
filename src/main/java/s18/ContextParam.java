@@ -1,4 +1,4 @@
-package s13;
+package s18;
 
 import java.io.IOException;
 
@@ -9,33 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dd.User;
-
-@WebServlet("/s13/fetch")
-public class Fetcher extends HttpServlet {
+@WebServlet("/s18/contextParam")
+public class ContextParam extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        if (name == null) {
-            name = "Tom";
-        }
-        Integer id;
-        try {
-            String param = request.getParameter("id");
-            if (param == null) {
-                id = 0;
-            } else {
-                id = Integer.valueOf(param);
-            }
-        } catch (Exception e) {
-            id = 1;
-        }
+        String admin = this.getServletContext().getInitParameter("admin");
+        request.setAttribute("admin", admin);
 
-        request.setAttribute("user", new User(name, id));
-
-        RequestDispatcher rd = request.getRequestDispatcher("/s13/fetch.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/s18/contextParam.jsp");
         rd.forward(request, response);
     }
 
