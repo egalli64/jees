@@ -32,7 +32,7 @@ public class Greeter extends HttpServlet {
 
         if (request.getParameter("done") == null) {
             request.setAttribute("duration", duration);
-            RequestDispatcher rd = request.getRequestDispatcher("/s09/greeter.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/s11/greeter.jsp");
             rd.forward(request, response);
         } else {
             session.invalidate();
