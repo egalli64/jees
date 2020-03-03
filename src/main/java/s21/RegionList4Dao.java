@@ -21,20 +21,24 @@ public class RegionList4Dao extends HttpServlet {
     private DataSource ds;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    public void init() throws ServletException {
+        super.init();
 
-        // dirty patch, while delving in resource annotation not working anymore
+        // resource injection not working in Tomcat latest versions (?!)
         if (ds == null) {
-            System.err.println("*** dirty patch ***");
+            System.err.println("*** Resource-not-injected Tomcat patch ***");
             try {
                 Context envContext = (Context) (new InitialContext().lookup("java:/comp/env"));
                 ds = (DataSource) envContext.lookup("jdbc/me");
             } catch (NamingException ne) {
-                throw new IllegalStateException("Can't resolve JDBC resource", ne);
+                throw new ServletException("Can't resolve JDBC resource", ne);
             }
         }
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try (DaoRegion dao = new DaoRegion(ds)) {
             request.setAttribute("regions", dao.getAll());
             request.getRequestDispatcher("/s21/regions2.jsp").forward(request, response);
