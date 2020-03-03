@@ -22,17 +22,16 @@
                 
                 if (this.status != 200) {
                     target.value = "[Something went wrong: " + this.status + "]\n";
-                    return;
-                }
-            
-                target.value = this.responseText;
+                } else {
+                    target.value = this.responseText;
+                }            
             }
         }
     
         document.getElementById('btnServlet').onclick = () => {
             let request = new XMLHttpRequest();
             request.onload = callback;
-            request.open('GET', 's09/timerPlain');
+            request.open('GET', './s09/timerPlain');
             request.send();        
         };
 	</script>
