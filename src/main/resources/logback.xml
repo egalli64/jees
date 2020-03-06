@@ -8,10 +8,11 @@
         </encoder>
     </appender>
 
+    <logger name="s09" level="trace" />
     <logger name="org.jboss" level="info" />
     <logger name="org.hibernate" level="info" />
 
-    <root level="trace">
+    <root level="debug">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
