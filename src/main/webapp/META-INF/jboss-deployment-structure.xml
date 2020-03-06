@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- do not use JBoss setting -->
+<jboss-deployment-structure>
+    <deployment>
+        <exclusions>
+            <module name="org.slf4j" />
+            <module name="org.slf4j.ext" />
+            <module name="org.slf4j.impl" />
+        </exclusions>
+
+    </deployment>
+</jboss-deployment-structure>
+
+<!-- JBoss CLI configuration to avoid double newline -->
+<!-- /subsystem=logging/pattern-formatter=stdout:add(pattern="%s") -->
+<!-- /subsystem=logging/console-handler=stdout:add(autoflush=true, target=System.out, named-formatter=stdout, level=ALL) -->
+<!-- /subsystem=logging/logger=stdout:add(use-parent-handlers=false, handlers=[stdout], level=ALL) -->
