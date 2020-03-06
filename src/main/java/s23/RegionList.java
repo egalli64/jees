@@ -13,9 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @WebServlet("/s23/regions")
 public class RegionList extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private static final Logger logger = LoggerFactory.getLogger(RegionList.class);
 
     @Resource(name = "jdbc/me")
     private DataSource ds;
@@ -26,7 +30,7 @@ public class RegionList extends HttpServlet {
 
         // resource injection not working in Tomcat latest versions (?!)
         if (ds == null) {
-            System.err.println("*** Resource-not-injected Tomcat patch ***");
+            logger.info("Resource-not-injected Tomcat patch");
             try {
                 Context envContext = (Context) (new InitialContext().lookup("java:/comp/env"));
                 ds = (DataSource) envContext.lookup("jdbc/me");
@@ -39,6 +43,7 @@ public class RegionList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        logger.trace("called");
         try (DaoRegion dao = new DaoRegion(ds)) {
             request.setAttribute("regions", dao.getAll());
             request.getRequestDispatcher("/s23/regions2.jsp").forward(request, response);

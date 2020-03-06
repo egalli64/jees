@@ -13,9 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @WebServlet("/s11/buyNull")
 public class BuyNull extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private static final Logger logger = LoggerFactory.getLogger(BuyNull.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -28,6 +32,7 @@ public class BuyNull extends HttpServlet {
 
         String index = (String) request.getParameter("title");
         String value = (String) request.getParameter("quantity");
+        logger.debug(String.format("called for index=%s, value=%s", index, value));
 
         boolean done = true;
         if (index != null && value != null) {

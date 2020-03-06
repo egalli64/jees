@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import dd.User;
 
 /**
@@ -17,9 +20,12 @@ import dd.User;
 @WebServlet("/s21/loops")
 public class Loops extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private static final Logger logger = LoggerFactory.getLogger(Loops.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        logger.trace("called");
+
         User[] users = new User[] { new User("Alpha", 1), new User("Beta", 2), new User("Gamma", 3) };
         request.setAttribute("users", users);
 

@@ -11,10 +11,16 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class DaoRegion implements Closeable {
+    private static final Logger logger = LoggerFactory.getLogger(DaoRegion.class);
     private Connection conn;
 
     public DaoRegion(DataSource ds) {
+        logger.trace("called");
+
         try {
             this.conn = ds.getConnection();
         } catch (SQLException se) {
@@ -23,6 +29,7 @@ public class DaoRegion implements Closeable {
     }
 
     public List<Region> getAll() {
+        logger.trace("called");
         List<Region> results = new ArrayList<>();
 
         try (Statement stmt = conn.createStatement(); //
