@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 <Context>
     <!-- moved in the AS configuration -->
     <!-- <Resource name="jdbc/me" type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver" 
