@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- generic DOCTYPE XML declaration not accepted by JBOSS -->
 
 <!-- do not use JBoss setting -->
 <jboss-deployment-structure>
