@@ -1,6 +1,5 @@
 package s23;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,7 +13,7 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DaoRegion implements Closeable {
+public class DaoRegion implements AutoCloseable {
     private static final Logger logger = LoggerFactory.getLogger(DaoRegion.class);
     private Connection conn;
 
