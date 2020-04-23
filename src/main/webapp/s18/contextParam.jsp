@@ -10,6 +10,8 @@
 
     <h1>Ask ${initParam["admin"]}!</h1>
 
+    <h1>Ask ${initParam.admin}!</h1>
+
     <a href="..">Back home</a>
 </body>
 </html>
