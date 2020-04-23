@@ -23,7 +23,7 @@ public class Checker extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
-        logger.trace("called for user [" + user + "]");
+        logger.debug("called for user [" + user + "]");
 
         Set<Character> set = new TreeSet<>();
         if (user != null) {
@@ -35,6 +35,8 @@ public class Checker extends HttpServlet {
 
         RequestDispatcher rd = request.getRequestDispatcher("/s10/checker.jsp");
         rd.forward(request, response);
+
+        // request.getRequestDispatcher("/s10/checker.jsp").forward(request, response);
     }
 
     @Override
