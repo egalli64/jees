@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 @WebFilter(dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD }, urlPatterns = { "*.jsp" })
 public class FilterJspReq implements Filter {
-    private static final Logger logger = LoggerFactory.getLogger(FilterJspReq.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FilterJspReq.class);
 
     public void init(FilterConfig fc) throws ServletException {
         // nothing to do here, currently
@@ -39,7 +39,7 @@ public class FilterJspReq implements Filter {
                 url.append(query);
             }
 
-            logger.trace("filter JSP on " + url.toString());
+            LOG.trace("filter JSP on " + url.toString());
         }
 
         chain.doFilter(request, response);

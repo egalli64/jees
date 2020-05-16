@@ -17,11 +17,11 @@ import dd.User;
 @WebServlet("/s13/fetch")
 public class Fetcher extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(Fetcher.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Fetcher.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        logger.trace("called");
+        LOG.trace("called");
 
         String name = request.getParameter("name");
         if (name == null) {

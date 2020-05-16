@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s23/regions")
 public class RegionList extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(RegionList.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RegionList.class);
 
     @Resource(name = "jdbc/me")
     private DataSource ds;
@@ -24,7 +24,7 @@ public class RegionList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        logger.trace("called");
+        LOG.trace("called");
         try (DaoRegion dao = new DaoRegion(ds)) {
             request.setAttribute("regions", dao.getAll());
             request.getRequestDispatcher("/s23/regions2.jsp").forward(request, response);

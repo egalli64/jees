@@ -18,11 +18,11 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s11/greeter2")
 public class Greeter2 extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(Greeter2.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Greeter2.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        logger.trace("called");
+        LOG.trace("called");
         boolean invalidate = false;
 
         HttpSession session = request.getSession();

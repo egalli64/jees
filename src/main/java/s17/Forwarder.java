@@ -15,12 +15,12 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s17/forward")
 public class Forwarder extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(Forwarder.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Forwarder.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String to = request.getParameter("to");
-        logger.debug("called for " + to);
+        LOG.debug("called for " + to);
 
         String destination;
         switch (to) {

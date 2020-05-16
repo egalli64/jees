@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 @WebFilter(dispatcherTypes = { DispatcherType.REQUEST }, urlPatterns = { "/*" })
 public class FilterAllReq implements Filter {
-    private static final Logger logger = LoggerFactory.getLogger(FilterAllReq.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FilterAllReq.class);
 
     @Override
     public void init(FilterConfig fc) throws ServletException {
@@ -33,7 +33,7 @@ public class FilterAllReq implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         if (!(request instanceof HttpServletRequest)) {
-            logger.info("Strange. Not a HttpServletRequest");
+            LOG.info("Strange. Not a HttpServletRequest");
         } else {
             HttpServletRequest hsr = (HttpServletRequest) request;
 
@@ -44,7 +44,7 @@ public class FilterAllReq implements Filter {
                 url.append(query);
             }
 
-            logger.trace("filter all on " + url.toString());
+            LOG.trace("filter all on " + url.toString());
         }
         // ...
         chain.doFilter(request, response);

@@ -15,11 +15,11 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s18/contextParam")
 public class ContextParam extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(ContextParam.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ContextParam.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        logger.trace("called");
+        LOG.trace("called");
 
         String admin = this.getServletContext().getInitParameter("admin");
         request.setAttribute("admin", admin);

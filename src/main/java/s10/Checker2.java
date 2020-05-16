@@ -17,13 +17,13 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s10/checker2")
 public class Checker2 extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(Checker2.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Checker2.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
-        logger.trace("called for user [" + user + "]");
+        LOG.trace("called for user [" + user + "]");
 
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");

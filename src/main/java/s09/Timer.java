@@ -16,12 +16,12 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s09/timer")
 public class Timer extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(Timer.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Timer.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        logger.trace("called");
+        LOG.trace("called");
         
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");

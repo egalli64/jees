@@ -14,11 +14,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class DaoRegion implements AutoCloseable {
-    private static final Logger logger = LoggerFactory.getLogger(DaoRegion.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DaoRegion.class);
     private Connection conn;
 
     public DaoRegion(DataSource ds) {
-        logger.trace("called");
+        LOG.trace("called");
 
         try {
             this.conn = ds.getConnection();
@@ -28,7 +28,7 @@ public class DaoRegion implements AutoCloseable {
     }
 
     public List<Region> getAll() {
-        logger.trace("called");
+        LOG.trace("called");
         List<Region> results = new ArrayList<>();
 
         try (Statement stmt = conn.createStatement(); //
