@@ -6,7 +6,7 @@ import org.hibernate.Session;
 
 public class RegionDao {
     public List<Region> getAll() {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtil.getSession()) {
             return session.createQuery("from Region", Region.class).list();
         }
     }
