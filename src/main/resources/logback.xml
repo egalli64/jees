@@ -12,7 +12,7 @@
     <logger name="org.jboss" level="info" />
     <logger name="org.hibernate" level="info" />
 
-    <root level="debug">
+    <root level="trace">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
