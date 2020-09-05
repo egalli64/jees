@@ -27,10 +27,7 @@ public class Login extends HttpServlet {
         // any password should be encrypted and stored in a safe place!
         if ("superuser".equals(user) && "fido".equals(password)) {
             request.getSession().setAttribute("logged", true);
-
-            try (PrintWriter writer = response.getWriter()) {
-                writer.println("Now you are logged in, " + user);
-            }
+            request.getRequestDispatcher("..").forward(request, response);
         } else {
             request.getSession().setAttribute("logged", false);
             request.getRequestDispatcher("login.html").forward(request, response);
