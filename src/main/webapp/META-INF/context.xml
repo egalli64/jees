@@ -2,7 +2,8 @@
 <!DOCTYPE xml>
 <Context>
     <!-- moved in the AS configuration -->
+    <!-- if mysql complains, try adding "?serverTimezone=Europe/Rome" to URL -->
     <!-- <Resource name="jdbc/me" type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver" 
-        auth="Container" url="jdbc:mysql://localhost:3306/me?serverTimezone=Europe/Rome" 
+        auth="Container" url="jdbc:mysql://localhost:3306/me" 
         username="me" password="password" /> -->
 </Context>
