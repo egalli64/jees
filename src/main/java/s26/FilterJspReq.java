@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -19,19 +18,13 @@ import org.slf4j.LoggerFactory;
 public class FilterJspReq implements Filter {
     private static final Logger LOG = LoggerFactory.getLogger(FilterJspReq.class);
 
-    public void init(FilterConfig fc) throws ServletException {
-        // nothing to do here, currently
-    }
-
-    public void destroy() {
-        // nothing to do here, currently
-    }
-
+    @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         if (request instanceof HttpServletRequest) {
             HttpServletRequest hsr = (HttpServletRequest) request;
 
+            // rebuild the full URL joining the parameters, when available
             StringBuffer url = hsr.getRequestURL();
             String query = hsr.getQueryString();
             if (query != null) {

@@ -2,7 +2,6 @@ package s26;
 
 import java.io.IOException;
 
-import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebFilter(dispatcherTypes = { DispatcherType.REQUEST }, urlPatterns = { "/s26/restricted/*" })
+@WebFilter(urlPatterns = { "/s26/restricted/*" })
 public class FilterRestricted implements Filter {
     private static final Logger LOG = LoggerFactory.getLogger(FilterRestricted.class);
 

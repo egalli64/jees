@@ -2,7 +2,6 @@ package s26;
 
 import java.io.IOException;
 
-import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -15,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebFilter(dispatcherTypes = { DispatcherType.REQUEST }, urlPatterns = { "/*" })
+@WebFilter(urlPatterns = { "/*" })
 public class FilterAllReq implements Filter {
     private static final Logger LOG = LoggerFactory.getLogger(FilterAllReq.class);
 

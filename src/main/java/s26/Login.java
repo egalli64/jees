@@ -1,7 +1,6 @@
 package s26;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +23,7 @@ public class Login extends HttpServlet {
 
         LOG.trace("user is " + user);
 
-        // any password should be encrypted and stored in a safe place!
+        // don't do that! any password should be encrypted and stored in a safe place!
         if ("superuser".equals(user) && "fido".equals(password)) {
             request.getSession().setAttribute("logged", true);
             request.getRequestDispatcher("..").forward(request, response);
@@ -38,5 +37,4 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         doGet(request, response);
     }
-
 }
