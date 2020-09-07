@@ -19,6 +19,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+	    // attribute: user name
 	    // forward logged.jsp o unknown.jsp
 	}
 

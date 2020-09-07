@@ -6,6 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <!-- username -->
+    <h1>Ciao _username_</h1>
+    <!-- EL: username -->
 </body>
 </html>
