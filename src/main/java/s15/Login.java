@@ -1,6 +1,7 @@
 package s15;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,23 +13,35 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/s15/login")
 public class Login extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     *      response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-	    // attribute: user name
-	    // forward logged.jsp o unknown.jsp
-	}
+        String user = request.getParameter("user");
+        String password = request.getParameter("password");
+        
+        request.setAttribute("user", user);
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+        if (user == null || password == null || user.isBlank() || password.isBlank()) {
+            request.getRequestDispatcher("/s15/unknown.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("/s15/logged.jsp").forward(request, response);
+        }
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     *      response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        doGet(request, response);
+    }
 
 }

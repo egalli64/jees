@@ -3,9 +3,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Can't login</title>
 </head>
 <body>
-    <!-- refused! -->
+    <h1>Login for "${user}" rejected!</h1>
 </body>
 </html>

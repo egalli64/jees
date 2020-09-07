@@ -3,10 +3,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Logged</title>
 </head>
 <body>
-    <h1>Ciao _username_</h1>
-    <!-- EL: username -->
+    <h1>Ciao ${user}</h1>
 </body>
 </html>
