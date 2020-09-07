@@ -24,7 +24,7 @@ public class Greeter extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         LOG.trace("called");
-
+        
         HttpSession session = request.getSession();
         LocalTime start = (LocalTime) session.getAttribute("start");
 

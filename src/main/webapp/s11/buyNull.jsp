@@ -17,7 +17,8 @@
 			<option value="2">Two</option>
 			<option value="3">Three</option>
 			<option value="4">Four</option>
-		</select> <label>Quantity: <input name="quantity" type="number"></label>
+		</select>
+        <label>Quantity: <input name="quantity" type="number"></label>
 		<button>Get</button>
 	</form>
 

@@ -30,8 +30,8 @@ public class BuyNull extends HttpServlet {
             orders = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0));
         }
 
-        String index = (String) request.getParameter("title");
-        String value = (String) request.getParameter("quantity");
+        String index = request.getParameter("title");
+        String value = request.getParameter("quantity");
         LOG.debug(String.format("called for index=%s, value=%s", index, value));
 
         boolean done = true;
@@ -53,8 +53,16 @@ public class BuyNull extends HttpServlet {
         }
         request.setAttribute("total", total);
 
-        RequestDispatcher rd = request.getRequestDispatcher( //
-                done ? "/s11/buyNullDone.jsp" : "/s11/buyNull.jsp");
+//        RequestDispatcher rd = request.getRequestDispatcher( //
+//                done ? "/s11/buyNullDone.jsp" : "/s11/buyNull.jsp");
+
+        RequestDispatcher rd;
+        if (done) {
+            rd = request.getRequestDispatcher("/s11/buyNullDone.jsp");
+        } else {
+            rd = request.getRequestDispatcher("/s11/buyNull.jsp");
+        }
+
         rd.forward(request, response);
     }
 
