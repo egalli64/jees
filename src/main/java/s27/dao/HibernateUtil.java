@@ -18,7 +18,7 @@ public class HibernateUtil {
         settings.put(Environment.DATASOURCE, "java:comp/env/jdbc/me");
         settings.put(Environment.SHOW_SQL, "true");
         configuration.setProperties(settings);
-        configuration.addAnnotatedClass(Region.class);
+        configuration.addAnnotatedClass(Coder.class);
 
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();

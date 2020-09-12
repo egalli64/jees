@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import s27.dao.Region;
-import s27.dao.RegionDao;
+import s27.dao.Coder;
+import s27.dao.CoderDao;
 
-@WebServlet("/s27/regions")
+@WebServlet("/s27/coders")
 public class HibRegions extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOG = LoggerFactory.getLogger(HibRegions.class);
@@ -29,11 +29,11 @@ public class HibRegions extends HttpServlet {
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
 
-        List<Region> regions = new RegionDao().getAll();
-        LOG.debug(String.format("Found %d regions", regions.size()));
+        List<Coder> coders = new CoderDao().getAll();
+        LOG.debug(String.format("Found %d regions", coders.size()));
 
         try (PrintWriter writer = response.getWriter()) {
-            writer.println(regions);
+            writer.println(coders);
         }
     }
 

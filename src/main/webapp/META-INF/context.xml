@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
 <Context>
-    <!-- moved in the AS configuration -->
-    <!-- if mysql complains, try adding "?serverTimezone=Europe/Rome" to URL -->
-    <!-- <Resource name="jdbc/me" type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver" 
-        auth="Container" url="jdbc:mysql://localhost:3306/me" 
-        username="me" password="password" /> -->
+	<!-- moved in Tomcat/WildFly configuration -->
+
+	<!-- MySQL -->
+	<!-- if mysql complains, try adding "?serverTimezone=Europe/Rome" to URL -->
+	<!-- <Resource name="jdbc/me" type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver" 
+		auth="Container" url="jdbc:mysql://localhost:3306/me" username="me" password="password" /> -->
+
+	<!-- Oracle DB 11 XE -->
+	<!-- <Resource name="jdbc/me" type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver" 
+		auth="Container" url="jdbc:oracle:thin:@127.0.0.1:1521/xe" username="me" password="password" /> -->
 </Context>

@@ -6,20 +6,22 @@
 <html>
 <head>
 <meta charset="utf-8">
-<sql:query dataSource="jdbc/me" var="regions">select * from regions</sql:query>
-<title>HR Regions</title>
+<sql:query dataSource="jdbc/me" var="coders">select * from coders</sql:query>
+<title>Coders</title>
 </head>
 <body>
-    <h1>HR Regions by tag</h1>
+    <h1>Coders by JSTL (don't do this in production)</h1>
     <table>
         <tr>
             <th>id</th>
-            <th>name</th>
+            <th>first name</th>
+            <th>last name</th>
         </tr>
-        <c:forEach var="cur" items="${regions.rows}">
+        <c:forEach var="cur" items="${coders.rows}">
             <tr>
-                <td>${cur.REGION_ID}</td>
-                <td>${cur.REGION_NAME}</td>
+                <td>${cur.CODER_ID}</td>
+                <td>${cur.FIRST_NAME}</td>
+                <td>${cur.LAST_NAME}</td>
             </tr>
         </c:forEach>
     </table>

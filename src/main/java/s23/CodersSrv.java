@@ -13,10 +13,10 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/s23/regions")
-public class RegionList extends HttpServlet {
+@WebServlet("/s23/coders")
+public class CodersSrv extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(RegionList.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CodersSrv.class);
 
     @Resource(name = "jdbc/me")
     private DataSource ds;
@@ -25,9 +25,9 @@ public class RegionList extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         LOG.trace("called");
-        try (DaoRegion dao = new DaoRegion(ds)) {
-            request.setAttribute("regions", dao.getAll());
-            request.getRequestDispatcher("/s23/regions2.jsp").forward(request, response);
+        try (CoderDao dao = new CoderDao(ds)) {
+            request.setAttribute("coders", dao.getAll());
+            request.getRequestDispatcher("/s23/coders2.jsp").forward(request, response);
         }
     }
 
