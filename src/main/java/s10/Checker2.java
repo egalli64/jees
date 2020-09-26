@@ -36,7 +36,7 @@ public class Checker2 extends HttpServlet {
             }
 
             try (PrintWriter writer = response.getWriter()) {
-                for (char c : set) {
+                for (Character c : set) {
                     writer.print(c);
                 }
             }

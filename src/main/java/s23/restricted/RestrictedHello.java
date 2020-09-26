@@ -1,6 +1,7 @@
-package s13;
+package s23.restricted;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,20 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dd.Document;
-import dd.User;
-
-@WebServlet("/s13/fetch")
-public class Fetcher extends HttpServlet {
+@WebServlet("/s23/restricted/hello")
+public class RestrictedHello extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(Fetcher.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RestrictedHello.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        LOG.trace("called");
+        LOG.trace("enter");
 
-        request.setAttribute("doc", new Document("JSP Cheatsheet", new User("Tom", 42)));
-        request.getRequestDispatcher("/s13/fetch.jsp").forward(request, response);
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
+        try (PrintWriter writer = response.getWriter()) {
+            writer.println("Being a registered user, you could see this restricted information!");
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

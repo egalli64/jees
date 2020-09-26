@@ -3,15 +3,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Context parameter</title>
+<title>Hello EL</title>
 </head>
 <body>
-    <h1>Questions? Ask ${admin}</h1>
-
-    <h1>Ask ${initParam["admin"]}!</h1>
-
-    <h1>Ask ${initParam.admin}!</h1>
-
+    <h1>Hello!</h1>
+    <p>Request parameter x: ${param.x}</p>
+    <p>Request parameter y[1]: ${paramValues.y[1]}</p>
+    <p>Header host name: ${header.host}</p>
     <p>
         Back <a href="/mdwa/index.html">home</a>
     </p>

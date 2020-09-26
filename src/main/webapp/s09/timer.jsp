@@ -11,5 +11,8 @@
             out.print(LocalTime.now());
         %>
     </h1>
+    <p>
+        Back <a href="/mdwa/index.html">home</a>
+    </p>
 </body>
 </html>

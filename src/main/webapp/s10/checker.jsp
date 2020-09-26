@@ -17,13 +17,13 @@
                 out.print("is empty");
             } else {
                 out.print("contains these letters:");
-
-                Iterator<Character> it = set.iterator();
-                while (it.hasNext()) {
-                    out.print(" " + it.next());
+        
+                for (Character c : set) {
+                    out.print(" " + c);
                 }
             }
         %>
     </p>
+    <%@include file="backHome.html"%>
 </body>
 </html>

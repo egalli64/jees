@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <title>AJAX for Servlet</title>
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script src="js/s09.js" defer></script>
 </head>
 <body>
     <h1>AJAX for Servlet</h1>
 
     <p>
-        Back <a href="index.html">home</a>
+        Back <a href="/mdwa/index.html">home</a>
     </p>
 
     <div>
@@ -20,35 +21,5 @@
         <button id="btnServlet2">Get</button>
         <input id="target2" readonly>
     </div>
-    <script type="text/javascript">
-        function callback() {
-            if (this.readyState == XMLHttpRequest.DONE) {        
-                let target = document.getElementById('target');
-                
-                if (this.status != 200) {
-                    target.value = "[Something went wrong: " + this.status + "]\n";
-                } else {
-                    target.value = this.responseText;
-                }            
-            }
-        }
-
-        document.getElementById('btnServlet').onclick = () => {
-            let request = new XMLHttpRequest();
-            request.onload = callback;
-            request.open('GET', 's09/timerPlain');
-            request.send();        
-        };
-
-
-        document.getElementById('btnServlet2').onclick = () => {
-            $.getJSON("s09/users", (json) => {
-                let target = document.getElementById('target2');
-                json.forEach((user) => {
-                    target.value += `[${user.name}: ${user.id}]`;
-                });
-            });
-        }
-	</script>
 </body>
 </html>

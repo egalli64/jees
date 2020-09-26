@@ -3,12 +3,14 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Page not found</title>
+<title>Feedback</title>
+<base href="/mdwa/">
 </head>
 <body>
-    <h1>404!</h1>
+    <p>Please, check the log for feedback...</p>
+
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="index.html">home</a>
     </p>
 </body>
 </html>

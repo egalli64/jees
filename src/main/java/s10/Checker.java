@@ -36,6 +36,7 @@ public class Checker extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("/s10/checker.jsp");
         rd.forward(request, response);
 
+        // same as above, in a compact way
         // request.getRequestDispatcher("/s10/checker.jsp").forward(request, response);
     }
 

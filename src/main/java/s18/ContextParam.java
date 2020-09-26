@@ -2,7 +2,6 @@ package s18;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,9 +22,7 @@ public class ContextParam extends HttpServlet {
 
         String admin = this.getServletContext().getInitParameter("admin");
         request.setAttribute("admin", admin);
-
-        RequestDispatcher rd = request.getRequestDispatcher("/s18/contextParam.jsp");
-        rd.forward(request, response);
+        request.getRequestDispatcher("/s18/contextParam.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

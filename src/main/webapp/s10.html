@@ -2,51 +2,30 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Servlet &amp; JSP</title>
+<title>Servlet, form, AJAX</title>
+<script type="text/javascript" src="js/s10.js" defer></script>
 </head>
 <body>
-    <h1>Servlet &amp; JSP</h1>
+    <h1>Calling a servlet</h1>
 
     <p>
-        Back <a href="index.html">home</a>
+        Back <a href="/mdwa/index.html">home</a>
     </p>
 
+
+    <h2>Form to servlet to JSP</h2>
+
     <form action="s10/checker">
-        <label>User: <input name="user"></label>
+        <label>User: <input name="user" placeholder="Enter your name"></label>
         <button>Go!</button>
     </form>
 
-    <hr>
+    <h2>AJAX send a request and display the response</h2>
 
     <div>
-        <label>User: <input id="name"></label>
+        <label>User: <input id="name" placeholder="Enter your name"></label>
         <button id="btnCheck">Go!</button>
         <p id="target"></p>
     </div>
-
-    <script type="text/javascript">
-        function callback() {
-            if (this.readyState == XMLHttpRequest.DONE) {        
-                let target = document.getElementById('target');
-                
-                if (this.status != 200) {
-                    target.textContent = "[Something went wrong: " + this.status + "]\n";
-                    return;
-                }
-            
-                target.textContent = this.responseText;
-            }
-        }
-
-        document.getElementById('btnCheck').onclick = () => {
-            let name = document.getElementById('name');
-            let target = 's10/checker2?user=' + name.value;
-    
-            let request = new XMLHttpRequest();
-            request.onload = callback;
-            request.open('GET', target);
-            request.send();
-        };
-	</script>
 </body>
 </html>

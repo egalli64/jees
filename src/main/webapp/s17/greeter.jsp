@@ -3,15 +3,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Context parameter</title>
+<title>Feedback</title>
 </head>
 <body>
-    <h1>Questions? Ask ${admin}</h1>
+    <h1>The greeter page</h1>
 
-    <h1>Ask ${initParam["admin"]}!</h1>
-
-    <h1>Ask ${initParam.admin}!</h1>
-
+    <p>You started working on this stuff ${duration.seconds} seconds ago</p>
     <p>
         Back <a href="/mdwa/index.html">home</a>
     </p>

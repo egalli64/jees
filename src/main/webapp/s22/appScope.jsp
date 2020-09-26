@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Context parameter</title>
+<title>Attribute in application scope</title>
 </head>
 <body>
-    <h1>Questions? Ask ${admin}</h1>
-
-    <h1>Ask ${initParam["admin"]}!</h1>
-
-    <h1>Ask ${initParam.admin}!</h1>
-
+    <h1>The web app started at ${applicationScope.start}</h1>
     <p>
         Back <a href="/mdwa/index.html">home</a>
     </p>
