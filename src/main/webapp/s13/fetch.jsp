@@ -9,11 +9,14 @@
     <h1>Hello!</h1>
 
     <p>Document title: ${doc.title}</p>
+    <p>Document title (via [] notation): ${doc["title"]}</p>
     <p>Document user name: ${doc.user.name}</p>
     <p>Document title (in the request scope): ${requestScope.doc.title}</p>
 
     <p>Request parameter x: ${param.x}</p>
     <p>Header host name: ${header.host}</p>
+    
+    <p>Request method (via page context): ${pageContext.request.method}</p>
     <p>
         Back <a href="/mdwa/index.html">home</a>
     </p>
