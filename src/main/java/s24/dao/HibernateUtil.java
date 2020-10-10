@@ -26,6 +26,10 @@ public class HibernateUtil {
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }
 
+    // no instance of this class is allowed!
+    private HibernateUtil() {
+    }
+
     public static Session getSession() {
         return sessionFactory.openSession();
     }
