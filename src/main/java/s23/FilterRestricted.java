@@ -47,8 +47,17 @@ public class FilterRestricted implements Filter {
                 // in both case, remember to end here the filtering
                 return;
             }
+        } else {
+            // put a denial message in the response and return
+            response.setContentType("text/plain");
+            response.setCharacterEncoding("utf-8");
+
+            response.getWriter().println("Only HTTP requests accepted!");
+            return;
         }
 
         chain.doFilter(request, response);
+
+        // put your filter-out behavior here
     }
 }
