@@ -22,7 +22,7 @@ public class Timer extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         LOG.trace("called");
-        
+
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
         try (PrintWriter writer = response.getWriter()) {
@@ -31,7 +31,7 @@ public class Timer extends HttpServlet {
             writer.println("<title>Hello Servlet</title></head>");
             writer.println("<body>");
             writer.println("<h1>" + LocalTime.now() + "</h1>");
-            writer.println("<a href=\"..\">" + "back home" + "</a>");
+            writer.println("<a href=\"..\">back home</a>");
             writer.println("</body></html>");
         }
     }
