@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Context parameter</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>Questions? Ask ${admin}</h1>

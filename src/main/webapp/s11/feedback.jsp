@@ -4,13 +4,13 @@
 <head>
 <meta charset="utf-8">
 <title>Feedback</title>
-<base href="/mdwa/">
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <p>Please, check the log for feedback...</p>
 
     <p>
-        Back <a href="index.html">home</a>
+        Back <a href="/mdwa/index.html">home</a>
     </p>
 </body>
 </html>

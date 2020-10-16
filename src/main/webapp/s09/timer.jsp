@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>Hello JSP</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <!-- HTML comment -->

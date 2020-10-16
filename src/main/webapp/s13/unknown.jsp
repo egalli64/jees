@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Can't login</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>Login for "${user}" rejected!</h1>

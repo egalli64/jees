@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Coders</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>Coders</h1>

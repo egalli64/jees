@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Buy Null Pointer</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>

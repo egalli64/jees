@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>JSTL for each</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <p>Users:</p>

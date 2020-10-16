@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Page not found</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>404!</h1>

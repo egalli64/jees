@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Error page</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>Internal error</h1>

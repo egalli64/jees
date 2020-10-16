@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Feedback</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>The greeter page</h1>

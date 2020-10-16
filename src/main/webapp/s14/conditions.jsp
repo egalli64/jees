@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>JSTL conditions</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>This JSP expects x or y as parameter</h1>

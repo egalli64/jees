@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>Attribute in application scope</title>
+<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
 </head>
 <body>
     <h1>The web app started at ${applicationScope.start}</h1>
