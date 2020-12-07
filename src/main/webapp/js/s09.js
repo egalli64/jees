@@ -1,12 +1,10 @@
 /**
  * See s09.html
  *
- * Requires
- *	jQuery - AJAX support
- *	access to the DOM
+ * Requires access to the DOM
  */
 
-function callback() {
+function timerResponseManager() {
 	if (this.readyState == XMLHttpRequest.DONE) {
 		let target = document.getElementById('target');
 
@@ -20,19 +18,30 @@ function callback() {
 
 document.getElementById('btnServlet').addEventListener('click', () => {
 	let request = new XMLHttpRequest();
-	request.onload = callback;
+	request.onload = timerResponseManager;
 	request.open('GET', 's09/timerPlain');
 	request.send();
 });
 
+function usersResponseManager() {
+	if (this.readyState == XMLHttpRequest.DONE) {
+		let target = document.getElementById('target2');
+
+		if (this.status != 200) {
+			target.value = `[Error: ${this.status}]`;
+		} else {
+			target.value = '';
+			let json = JSON.parse(this.responseText);
+			json.forEach(user => {
+				target.value += `[${user.name}: ${user.id}]`;
+			});
+		}
+	}
+}
 
 document.getElementById('btnServlet2').addEventListener('click', () => {
-	$.getJSON('s09/users', (json) => {
-		let target = document.getElementById('target2');
-		
-		target.value = '';
-		json.forEach((user) => {
-			target.value += `[${user.name}: ${user.id}]`;
-		});
-	});
+	let request = new XMLHttpRequest();
+	request.onload = usersResponseManager;
+	request.open('GET', 's09/users');
+	request.send();
 });
