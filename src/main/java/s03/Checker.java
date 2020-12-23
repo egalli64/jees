@@ -1,4 +1,4 @@
-package s10;
+package s03;
 
 import java.io.IOException;
 import java.util.Set;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/s10/checker")
+@WebServlet("/s03/checker")
 public class Checker extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOG = LoggerFactory.getLogger(Checker.class);
@@ -33,11 +33,11 @@ public class Checker extends HttpServlet {
         }
         request.setAttribute("set", set);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/s10/checker.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/s03/checker.jsp");
         rd.forward(request, response);
 
-        // same as above, in a compact way
-        // request.getRequestDispatcher("/s10/checker.jsp").forward(request, response);
+        // same as above, in a more compact way
+        // request.getRequestDispatcher("/s03/checker.jsp").forward(request, response);
     }
 
     @Override

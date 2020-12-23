@@ -1,8 +1,8 @@
-package s09;
+package s02;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,27 +10,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.google.gson.Gson;
 
-@WebServlet("/s09/timerPlain")
-public class TimerPlain extends HttpServlet {
+import dd.User;
+
+@WebServlet("/s02/users")
+public class UsersJson extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(TimerPlain.class);
+    private final Gson GSON = new Gson();
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        LOG.trace("called");
+        List<User> users = Arrays.asList(new User("Tom", 12), new User("Bob", 42));
 
-        response.setContentType("text/plain");
-        response.setCharacterEncoding("utf-8");
-        try (PrintWriter writer = response.getWriter()) {
-            writer.println(LocalTime.now());
-        }
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().append(GSON.toJson(users));
     }
 
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);

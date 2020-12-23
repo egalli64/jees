@@ -1,8 +1,7 @@
-/**
- * See s10.html
+/*
+ * See s03.html
  *
- * Requires
- *	access to the DOM
+ * Requires access to the DOM
  */
 
 function callback() {
@@ -20,7 +19,7 @@ function callback() {
 
 document.getElementById('btnCheck').onclick = () => {
 	let name = document.getElementById('name');
-	let target = 's10/checker2?user=' + name.value;
+	let target = '/jes/s03/checkerPlain?user=' + name.value;
 
 	let request = new XMLHttpRequest();
 	request.onload = callback;

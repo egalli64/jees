@@ -1,9 +1,8 @@
-package s10;
+package s02;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Set;
-import java.util.TreeSet;
+import java.time.LocalTime;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,32 +13,20 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/s10/checker2")
-public class Checker2 extends HttpServlet {
+@WebServlet("/s02/timerPlain")
+public class TimerPlain extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(Checker2.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TimerPlain.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("user");
-        LOG.trace("called for user [" + user + "]");
+        LOG.trace("called");
 
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
-
-        if (user != null) {
-            Set<Character> set = new TreeSet<>();
-
-            for (char c : user.toCharArray()) {
-                set.add(Character.toLowerCase(c));
-            }
-
-            try (PrintWriter writer = response.getWriter()) {
-                for (Character c : set) {
-                    writer.print(c);
-                }
-            }
+        try (PrintWriter writer = response.getWriter()) {
+            writer.println(LocalTime.now());
         }
     }
 
