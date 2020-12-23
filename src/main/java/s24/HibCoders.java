@@ -19,18 +19,18 @@ import s24.dao.CoderDao;
 @WebServlet("/s24/coders")
 public class HibCoders extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(HibCoders.class);
+    private static final Logger log = LoggerFactory.getLogger(HibCoders.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        LOG.trace("enter");
+        log.trace("enter");
 
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
 
         List<Coder> coders = new CoderDao().getAll();
-        LOG.debug(String.format("Found %d coders", coders.size()));
+        log.debug(String.format("Found %d coders", coders.size()));
 
         try (PrintWriter writer = response.getWriter()) {
             writer.println(coders);

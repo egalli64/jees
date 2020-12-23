@@ -7,7 +7,9 @@
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
-    <p>Please, check the log for feedback...</p>
+    <p>
+        The passed parameters are: <%= request.getAttribute("result") %>
+    </p>
 
     <p>
         Back <a href="/jes/index.html">home</a>

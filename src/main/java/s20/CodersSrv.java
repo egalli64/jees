@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s20/coders")
 public class CodersSrv extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(CodersSrv.class);
+    private static final Logger log = LoggerFactory.getLogger(CodersSrv.class);
 
     @Resource(name = "jdbc/me")
     private DataSource ds;
@@ -24,7 +24,7 @@ public class CodersSrv extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        LOG.trace("called");
+        log.trace("called");
         try (CoderDao dao = new CoderDao(ds)) {
             request.setAttribute("coders", dao.getAll());
             request.getRequestDispatcher("/s20/coders2.jsp").forward(request, response);

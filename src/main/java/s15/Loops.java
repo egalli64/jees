@@ -19,11 +19,11 @@ import dd.User;
 @WebServlet("/s15/loops")
 public class Loops extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(Loops.class);
+    private static final Logger log = LoggerFactory.getLogger(Loops.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        LOG.trace("called");
+        log.trace("called");
 
         User[] users = new User[] { new User("Alpha", 1), new User("Beta", 2), new User("Gamma", 3) };
         request.setAttribute("users", users);

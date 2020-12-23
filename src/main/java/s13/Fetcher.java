@@ -17,12 +17,12 @@ import dd.User;
 @WebServlet("/s13/fetch")
 public class Fetcher extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(Fetcher.class);
+    private static final Logger log = LoggerFactory.getLogger(Fetcher.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        LOG.trace("called");
+        log.trace("called");
 
         request.setAttribute("doc", new Document("JSP Cheatsheet", new User("Tom", 42)));
         request.getRequestDispatcher("/s13/fetch.jsp").forward(request, response);

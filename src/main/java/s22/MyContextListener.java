@@ -11,10 +11,10 @@ import org.slf4j.LoggerFactory;
 
 @WebListener
 public class MyContextListener implements ServletContextListener {
-    private static final Logger LOG = LoggerFactory.getLogger(MyContextListener.class);
+    private static final Logger log = LoggerFactory.getLogger(MyContextListener.class);
 
     public void contextInitialized(ServletContextEvent sce) {
-        LOG.trace("called");
+        log.trace("called");
         sce.getServletContext().setAttribute("start", LocalTime.now());
     }
 }

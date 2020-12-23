@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 @WebFilter(urlPatterns = { "/s23/restricted/*" })
 public class FilterRestricted implements Filter {
-    private static final Logger LOG = LoggerFactory.getLogger(FilterRestricted.class);
+    private static final Logger log = LoggerFactory.getLogger(FilterRestricted.class);
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -33,10 +33,10 @@ public class FilterRestricted implements Filter {
 
                 session.setAttribute("logged", false);
             } catch (Exception ex) {
-                LOG.warn(ex.getMessage());
+                log.warn(ex.getMessage());
             }
 
-            LOG.trace("Access to restricted area is " + logged);
+            log.trace("Access to restricted area is " + logged);
             if (!logged) {
                 // new request, the URL is _not_ relative to the current web app
                 ((HttpServletResponse) response).sendRedirect("/jes/s23/login.html");

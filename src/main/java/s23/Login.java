@@ -14,14 +14,14 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s23/login")
 public class Login extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(Login.class);
+    private static final Logger log = LoggerFactory.getLogger(Login.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
         String password = request.getParameter("password");
 
-        LOG.trace("user is " + user);
+        log.trace("user is " + user);
 
         // don't do that! any password should be encrypted and stored in a safe place!
         if ("superuser".equals(user) && "fido".equals(password)) {

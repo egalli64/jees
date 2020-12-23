@@ -17,13 +17,13 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s03/checker")
 public class Checker extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(Checker.class);
+    private static final Logger log = LoggerFactory.getLogger(Checker.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
-        LOG.debug("called for user [" + user + "]");
+        log.debug("called for user [" + user + "]");
 
         Set<Character> set = new TreeSet<>();
         if (user != null) {

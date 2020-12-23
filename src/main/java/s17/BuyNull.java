@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s17/buyNull")
 public class BuyNull extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(BuyNull.class);
+    private static final Logger log = LoggerFactory.getLogger(BuyNull.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,7 +32,7 @@ public class BuyNull extends HttpServlet {
 
         String index = request.getParameter("title");
         String value = request.getParameter("quantity");
-        LOG.debug(String.format("called for index=%s, value=%s", index, value));
+        log.debug(String.format("called for index=%s, value=%s", index, value));
 
         boolean done = true;
         if (index != null && value != null) {

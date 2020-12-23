@@ -14,11 +14,11 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/s19/error")
 public class ErrorGenerator extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(ErrorGenerator.class);
+    private static final Logger log = LoggerFactory.getLogger(ErrorGenerator.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        LOG.trace("called");
+        log.trace("called");
 
         throw new IllegalStateException("Something awful happened");
     }

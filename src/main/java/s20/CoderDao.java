@@ -15,12 +15,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CoderDao implements AutoCloseable {
-    private static final Logger LOG = LoggerFactory.getLogger(CoderDao.class);
+    private static final Logger log = LoggerFactory.getLogger(CoderDao.class);
     private static final String GET_ALL = "SELECT coder_id, first_name, last_name, hire_date, salary FROM coders";
     private Connection conn;
 
     public CoderDao(DataSource ds) {
-        LOG.trace("called");
+        log.trace("called");
 
         try {
             this.conn = ds.getConnection();
@@ -30,7 +30,7 @@ public class CoderDao implements AutoCloseable {
     }
 
     public List<Coder> getAll() {
-        LOG.trace("called");
+        log.trace("called");
         List<Coder> results = new ArrayList<>();
 
         try (Statement stmt = conn.createStatement(); //
@@ -41,7 +41,7 @@ public class CoderDao implements AutoCloseable {
                 results.add(cur);
             }
         } catch (SQLException se) {
-            LOG.error("Can't get coders: " + se.getMessage());
+            log.error("Can't get coders: " + se.getMessage());
             throw new IllegalStateException("Database issue " + se.getMessage());
         }
 
