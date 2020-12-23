@@ -1,8 +1,8 @@
-# mdwa
-Maven Dynamic Web App
+# jes
+Java EE Servlet
 
-Introduction to Java EE
+Introduction to Java EE on a Web Server
 
 Tested on
 - Tomcat 9
-- WildFly 18
+- WildFly 20
