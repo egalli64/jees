@@ -6,6 +6,7 @@
 <meta charset="utf-8">
 <title>JSP &amp; request</title>
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
     <h1>Hello!</h1>
