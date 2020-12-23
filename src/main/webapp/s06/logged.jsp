@@ -7,7 +7,7 @@
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
-    <h1>Hello ${user}</h1>
+    <h1>Hello ${param.user}</h1>
     <p>
         Back <a href="/jes/index.html">home</a>
     </p>

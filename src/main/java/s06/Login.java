@@ -1,4 +1,4 @@
-package s13;
+package s06;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/s13/login")
+@WebServlet("/s06/login")
 public class Login extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -18,13 +18,11 @@ public class Login extends HttpServlet {
         String user = request.getParameter("user");
         String password = request.getParameter("password");
 
-        request.setAttribute("user", user);
-
         String url;
-        if (user == null || password == null || user.isBlank() || password.isBlank()) {
-            url = "/s13/unknown.jsp";
+        if (user == null || user.isBlank() || password == null || password.isBlank()) {
+            url = "unknown.jsp";
         } else {
-            url = "/s13/logged.jsp";
+            url = "logged.jsp";
         }
         request.getRequestDispatcher(url).forward(request, response);
     }

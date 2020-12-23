@@ -7,7 +7,7 @@
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
-    <h1>Login for "${user}" rejected!</h1>
+    <h1>Login for "${param.user}" rejected!</h1>
     <p>
         Back <a href="/jes/index.html">home</a>
     </p>

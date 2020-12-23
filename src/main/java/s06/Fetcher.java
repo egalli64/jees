@@ -1,4 +1,4 @@
-package s13;
+package s06;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 import dd.Document;
 import dd.User;
 
-@WebServlet("/s13/fetch")
+@WebServlet("/s06/fetch")
 public class Fetcher extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(Fetcher.class);
@@ -25,7 +25,7 @@ public class Fetcher extends HttpServlet {
         log.trace("called");
 
         request.setAttribute("doc", new Document("JSP Cheatsheet", new User("Tom", 42)));
-        request.getRequestDispatcher("/s13/fetch.jsp").forward(request, response);
+        request.getRequestDispatcher("fetch.jsp").forward(request, response);
     }
 
     @Override
