@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Buy Null Pointer</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <h1>
         Buy Vinyls from the <i>Null Pointer</i> band
     </h1>
 
-    <form action="/mdwa/s17/buyNull">
+    <form action="/jes/s17/buyNull">
         <select name="title">
             <option value="0">Zero</option>
             <option value="1">One</option>
@@ -26,13 +26,13 @@
 
     <c:if test="${total != null and total != 0}">
         <p>You have already ordered ${total} from our vinyls. Thank you!</p>
-        <form action="/mdwa/s17/buyNull">
+        <form action="/jes/s17/buyNull">
             <label>Coupon <input name="coupon"></label>
             <button>Buy</button>
         </form>
     </c:if>
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="/jes/index.html">home</a>
     </p>
 </body>
 </html>

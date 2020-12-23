@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Can't login</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <h1>Login for "${user}" rejected!</h1>
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="/jes/index.html">home</a>
     </p>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Context parameter</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <h1>Questions? Ask ${admin}</h1>
@@ -14,7 +14,7 @@
     <h1>Ask ${initParam.admin}!</h1>
 
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="/jes/index.html">home</a>
     </p>
 </body>
 </html>

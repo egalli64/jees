@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Colors</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <h1>Preferred colors</h1>
@@ -15,7 +15,7 @@
         </c:forEach>
     </ul>
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="/jes/index.html">home</a>
     </p>
 </body>
 </html>

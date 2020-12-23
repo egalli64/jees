@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Logged</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <h1>Hello ${user}</h1>
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="/jes/index.html">home</a>
     </p>
 </body>
 </html>

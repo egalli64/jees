@@ -39,7 +39,7 @@ public class FilterRestricted implements Filter {
             LOG.trace("Access to restricted area is " + logged);
             if (!logged) {
                 // new request, the URL is _not_ relative to the current web app
-                ((HttpServletResponse) response).sendRedirect("/mdwa/s23/login.html");
+                ((HttpServletResponse) response).sendRedirect("/jes/s23/login.html");
 
                 // use this to keep the original request
 //                request.getRequestDispatcher("/s23/login.html").forward(request, response);

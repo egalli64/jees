@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>JSP &amp; request</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <h1>Hello!</h1>

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Buy Null Pointer</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <h1>
@@ -15,7 +15,7 @@
         <p>You have bought ${total} vinyls. Thank you!</p>
     </c:if>
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="/jes/index.html">home</a>
     </p>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Error page</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <h1>Internal error</h1>
@@ -16,7 +16,7 @@
 
     <p>For more details, ask ${initParam.admin}</p>
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="/jes/index.html">home</a>
     </p>
 </body>
 </html>

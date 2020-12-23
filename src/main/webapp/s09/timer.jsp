@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>Hello JSP</title>
-<link rel="icon" type="image/x-icon" href="/mdwa/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
 </head>
 <body>
     <!-- HTML comment -->
@@ -16,7 +16,7 @@
     </h1>
     <%-- JSP comment --%>
     <p>
-        Back <a href="/mdwa/index.html">home</a>
+        Back <a href="/jes/index.html">home</a>
     </p>
 </body>
 </html>
