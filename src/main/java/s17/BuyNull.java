@@ -27,6 +27,7 @@ public class BuyNull extends HttpServlet {
         List<Integer> orders = (List<Integer>) session.getAttribute("orders");
         if (orders == null) {
             orders = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0));
+            session.setAttribute("orders", orders);
         }
 
         String index = request.getParameter("title");
@@ -39,8 +40,6 @@ public class BuyNull extends HttpServlet {
 
             Integer cur = orders.get(pos) + Integer.parseInt(value);
             orders.set(pos, cur);
-            session.setAttribute("orders", orders);
-
             done = false;
         } else {
             session.invalidate();

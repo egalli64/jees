@@ -19,6 +19,7 @@ public class Fetcher extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOG = LoggerFactory.getLogger(Fetcher.class);
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         LOG.trace("called");
@@ -27,6 +28,7 @@ public class Fetcher extends HttpServlet {
         request.getRequestDispatcher("/s13/fetch.jsp").forward(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
