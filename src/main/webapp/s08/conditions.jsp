@@ -6,6 +6,7 @@
 <meta charset="utf-8">
 <title>JSTL conditions</title>
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
     <h1>This JSP expects x or y as parameter</h1>
@@ -27,7 +28,7 @@
             <p>There's no x, but y is ${param.y}</p>
         </c:when>
         <c:otherwise>
-            <p>No x nor y among parameters!</p>
+            <p>Neither x nor y among parameters!</p>
         </c:otherwise>
     </c:choose>
     <p>

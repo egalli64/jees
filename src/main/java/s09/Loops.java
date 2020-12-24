@@ -1,4 +1,4 @@
-package s15;
+package s09;
 
 import java.io.IOException;
 
@@ -13,10 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import dd.User;
 
-/**
- * Servlet implementation class ListUsers
- */
-@WebServlet("/s15/loops")
+@WebServlet("/s09/loops")
 public class Loops extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(Loops.class);
@@ -28,7 +25,7 @@ public class Loops extends HttpServlet {
         User[] users = new User[] { new User("Alpha", 1), new User("Beta", 2), new User("Gamma", 3) };
         request.setAttribute("users", users);
 
-        Double[] values = new Double[12]; // ...
+        double[] values = new double[12];
         for (int i = 0; i < values.length; i++) {
             values[i] = Math.random();
         }
@@ -37,7 +34,7 @@ public class Loops extends HttpServlet {
         String names = "bob,tom,bill";
         request.setAttribute("names", names);
 
-        request.getRequestDispatcher("/s15/loops.jsp").forward(request, response);
+        request.getRequestDispatcher("loops.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

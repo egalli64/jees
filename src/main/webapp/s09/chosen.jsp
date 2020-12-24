@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Colors</title>
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
     <h1>Preferred colors</h1>
