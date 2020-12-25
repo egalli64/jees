@@ -6,27 +6,29 @@
 <meta charset="UTF-8">
 <title>Buy Null Pointer</title>
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
     <h1>
         Buy Vinyls from the <i>Null Pointer</i> band
     </h1>
 
-    <form action="/jes/s17/buyNull">
-        <select name="title">
-            <option value="0">Zero</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            <option value="4">Four</option>
+    <h2>Order an album</h2>
+    <form action="nullOrder">
+        <select name="id">
+            <option value="1">Zero</option>
+            <option value="2">Second</option>
+            <option value="3">Trees</option>
+            <option value="4">Forks</option>
         </select>
-        <label>Quantity: <input name="quantity" type="number"></label>
+        <label>Quantity: <input name="quantity" type="number" value="1"></label>
         <button>Get</button>
     </form>
 
-    <c:if test="${total != null and total != 0}">
-        <p>You have already ordered ${total} from our vinyls. Thank you!</p>
-        <form action="/jes/s17/buyNull">
+    <c:if test="${total ne null and total ne 0}">
+        <p>You have ${total} of our vinyls in order. Thank you!</p>
+        <h2>Send the order</h2>
+        <form action="buyNull">
             <label>Coupon <input name="coupon"></label>
             <button>Buy</button>
         </form>
