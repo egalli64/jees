@@ -1,4 +1,4 @@
-package s20;
+package s13;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/s20/coders")
+@WebServlet("/s13/coders")
 public class CodersSrv extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(CodersSrv.class);
@@ -27,7 +27,7 @@ public class CodersSrv extends HttpServlet {
         log.trace("called");
         try (CoderDao dao = new CoderDao(ds)) {
             request.setAttribute("coders", dao.getAll());
-            request.getRequestDispatcher("/s20/coders2.jsp").forward(request, response);
+            request.getRequestDispatcher("coders.jsp").forward(request, response);
         }
     }
 

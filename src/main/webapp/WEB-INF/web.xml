@@ -29,7 +29,7 @@
         <location>/s12/500.jsp</location>
     </error-page>
 
-    <!-- slide 23 -->
+    <!-- slide 13 -->
     <resource-ref>
         <res-ref-name>jdbc/me</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>

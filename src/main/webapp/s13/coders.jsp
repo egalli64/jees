@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <title>Coders</title>
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
     <h1>Coders</h1>
@@ -18,13 +19,13 @@
             <th>hire date</th>
             <th>salary</th>
         </tr>
-        <c:forEach var="cur" items="${coders}">
+        <c:forEach var="coder" items="${coders}">
             <tr>
-                <td>${cur.id}</td>
-                <td>${cur.firstName}</td>
-                <td>${cur.lastName}</td>
-                <td>${cur.hireDate}</td>
-                <td>${cur.salary}</td>
+                <td>${coder.id}</td>
+                <td>${coder.firstName}</td>
+                <td>${coder.lastName}</td>
+                <td>${coder.hireDate}</td>
+                <td>${coder.salary}</td>
             </tr>
         </c:forEach>
     </table>
