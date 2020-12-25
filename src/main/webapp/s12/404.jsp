@@ -3,16 +3,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Context parameter</title>
+<title>Page not found</title>
 <link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
-    <h1>Questions? Ask ${admin}</h1>
-
-    <h1>Ask ${initParam["admin"]}!</h1>
-
-    <h1>Ask ${initParam.admin}!</h1>
-
+    <h1>404!</h1>
     <p>
         Back <a href="/jes/index.html">home</a>
     </p>

@@ -8,7 +8,7 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
-    <!-- slide 18 -->
+    <!-- slide 11 -->
     <context-param>
         <param-name>admin</param-name>
         <param-value>Tom</param-value>
@@ -19,14 +19,14 @@
         <param-value>password</param-value>
     </context-param>
 
-    <!-- slide 19 -->
+    <!-- slide 12 -->
     <error-page>
         <error-code>404</error-code>
-        <location>/s19/404.jsp</location>
+        <location>/s12/404.jsp</location>
     </error-page>
     <error-page>
         <error-code>500</error-code>
-        <location>/s19/500.jsp</location>
+        <location>/s12/500.jsp</location>
     </error-page>
 
     <!-- slide 23 -->
