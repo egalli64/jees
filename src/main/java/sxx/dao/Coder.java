@@ -1,4 +1,4 @@
-package s24.dao;
+package sxx.dao;
 
 import java.time.LocalDate;
 
