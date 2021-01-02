@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
 <configuration>
-    <appender name="STDOUT"
-        class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss:SSS} %-5level [%thread] %logger{36}.%M %msg%n</pattern>
         </encoder>
     </appender>
 
     <logger name="s09" level="trace" />
-    <logger name="org.jboss" level="info" />
-    <logger name="org.hibernate" level="info" />
 
     <root level="trace">
         <appender-ref ref="STDOUT" />
