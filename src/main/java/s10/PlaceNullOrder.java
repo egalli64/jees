@@ -29,6 +29,7 @@ public class PlaceNullOrder extends HttpServlet {
         return result;
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -39,14 +40,22 @@ public class PlaceNullOrder extends HttpServlet {
             session.setAttribute("orders", orders);
         }
 
+        // TODO: check null
         String id = request.getParameter("id");
         String value = request.getParameter("quantity");
-        log.debug(String.format("called for id=%s, value=%s", id, value));
+        log.debug("called for id={}, value={}", id, value);
 
         Album chosen = orders.get(id);
-        int quantity = Integer.parseInt(value);
 
-        chosen.setQuantity(chosen.getQuantity() + quantity);
+        try {
+            // TODO: check less than zero
+            int quantity = Integer.parseInt(value);
+            chosen.setQuantity(chosen.getQuantity() + quantity);
+        } catch (Exception ex) {
+            // TODO: handle exception
+            log.error(ex.getMessage());
+            throw ex;
+        }
 
         int total = 0;
         for (Album current : orders.values()) {
@@ -57,6 +66,7 @@ public class PlaceNullOrder extends HttpServlet {
         request.getRequestDispatcher("buyNull.jsp").forward(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);

@@ -1,6 +1,9 @@
 package s10;
 
-public class Album {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class Album implements Serializable {
     private int id;
     private String title;
     private int quantity;
