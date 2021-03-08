@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Hello JSP</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
+<title>Hello JSP</title>
 </head>
 <body>
     <!-- HTML comment -->
     <h1>
         <%
-            out.print(LocalTime.now());
+        out.print(LocalTime.now());
         %>
     </h1>
     <%-- JSP comment --%>

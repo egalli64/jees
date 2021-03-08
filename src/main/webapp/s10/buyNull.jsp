@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Buy Null Pointer</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>

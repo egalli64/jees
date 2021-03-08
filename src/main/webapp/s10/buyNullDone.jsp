@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Buy Null Pointer</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
     <h2>You ordered these albums</h2>
 
     <c:forEach var="album" items="${albums}">
-        <p>${album.title}: ${album.quantity}</p>
+        <p>${album.title}:&nbsp;${album.quantity}</p>
     </c:forEach>
 
     <hr>

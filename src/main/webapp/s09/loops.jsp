@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>JSTL for each</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
             <c:if test="${not(status.first or status.last)}">(index is ${status.index})</c:if>
         </p>
     </c:forEach>
-    <hr />
+    <hr>
     <p>Names</p>
     <c:forTokens var="token" items="${names}" delims=",">
         <p>${token}</p>

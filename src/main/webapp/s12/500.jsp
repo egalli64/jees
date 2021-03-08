@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Error page</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
         <div>Message: ${pageContext.exception["message"]}</div>
     </div>
 
-    <p>For more details, ask ${initParam.admin}</p>
+    <p>For more details, ask ${initParam.admin} to show you the Web Server log</p>
     <p>
         Back <a href="/jes/index.html">home</a>
     </p>

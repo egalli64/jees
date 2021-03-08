@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Hello EL</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 
     <p>Request parameter x: ${param.x}</p>
     <p>Header host name: ${header.host}</p>
-    
+
     <p>Request method (via page context): ${pageContext.request.method}</p>
     <p>
         Back <a href="/jes/index.html">home</a>

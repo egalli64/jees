@@ -28,6 +28,7 @@ public class Timer extends HttpServlet {
         try (PrintWriter writer = response.getWriter()) {
             writer.println("<!DOCTYPE html><html>");
             writer.println("<head><meta charset=\"utf-8\">");
+            writer.println("<link rel=\"icon\" href=\"data:;base64,=\">");
             writer.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/jes/css/simple.css\">");
             writer.println("<title>Hello Servlet</title></head>");
             writer.println("<body>");

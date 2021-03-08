@@ -4,12 +4,12 @@
 <head>
 <meta charset="utf-8">
 <title>Feedback</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
+<link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
 </head>
 <body>
     <p>
-        The passed parameters are: <%= request.getAttribute("result") %>
+        The passed parameters are: <%=request.getAttribute("result")%>
     </p>
 
     <p>
