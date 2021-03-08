@@ -14,9 +14,9 @@ import org.slf4j.LoggerFactory;
 import dd.Document;
 import dd.User;
 
+@SuppressWarnings("serial")
 @WebServlet("/s06/fetch")
 public class Fetcher extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(Fetcher.class);
 
     @Override
@@ -26,11 +26,5 @@ public class Fetcher extends HttpServlet {
 
         request.setAttribute("doc", new Document("JSP Cheatsheet", new User("Tom", 42)));
         request.getRequestDispatcher("fetch.jsp").forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }

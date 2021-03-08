@@ -13,9 +13,9 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("serial")
 @WebServlet("/s10/buyNull")
 public class BuyNull extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(BuyNull.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,10 +31,5 @@ public class BuyNull extends HttpServlet {
         }
 
         request.getRequestDispatcher("buyNullDone.jsp").forward(request, response);
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }

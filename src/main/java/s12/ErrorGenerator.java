@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("serial")
 @WebServlet("/s12/error")
 public class ErrorGenerator extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(ErrorGenerator.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -22,10 +22,4 @@ public class ErrorGenerator extends HttpServlet {
 
         throw new IllegalStateException("Something awful happened");
     }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
-    }
-
 }

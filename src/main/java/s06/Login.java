@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@SuppressWarnings("serial")
 @WebServlet("/s06/login")
 public class Login extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -24,6 +23,7 @@ public class Login extends HttpServlet {
         } else {
             url = "logged.jsp";
         }
+
         request.getRequestDispatcher(url).forward(request, response);
     }
 }

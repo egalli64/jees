@@ -14,9 +14,9 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("serial")
 @WebServlet("/s10/nullOrder")
 public class PlaceNullOrder extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(PlaceNullOrder.class);
 
     private Map<String, Album> createEmptyOrder() {
@@ -64,11 +64,5 @@ public class PlaceNullOrder extends HttpServlet {
         request.setAttribute("total", total);
 
         request.getRequestDispatcher("buyNull.jsp").forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }

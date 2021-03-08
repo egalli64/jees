@@ -13,9 +13,9 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("serial")
 @WebServlet("/s13/coders")
 public class CodersSrv extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(CodersSrv.class);
 
     @Resource(name = "jdbc/me")
@@ -29,11 +29,5 @@ public class CodersSrv extends HttpServlet {
             request.setAttribute("coders", dao.getAll());
             request.getRequestDispatcher("coders.jsp").forward(request, response);
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }

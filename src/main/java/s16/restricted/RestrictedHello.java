@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("serial")
 @WebServlet("/s16/restricted/hello")
 public class RestrictedHello extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(RestrictedHello.class);
 
     @Override
@@ -27,11 +27,5 @@ public class RestrictedHello extends HttpServlet {
         try (PrintWriter writer = response.getWriter()) {
             writer.println("Being a registered user, you could see this restricted information!");
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }

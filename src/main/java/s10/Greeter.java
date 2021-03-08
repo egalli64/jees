@@ -12,9 +12,9 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("serial")
 @WebServlet("/s10/greeter")
 public class Greeter extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(Greeter.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,10 +39,5 @@ public class Greeter extends HttpServlet {
 
         request.setAttribute("previous", prevUser);
         request.getRequestDispatcher("greeter.jsp").forward(request, response);
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }

@@ -13,9 +13,9 @@ import org.slf4j.LoggerFactory;
 
 import dd.User;
 
+@SuppressWarnings("serial")
 @WebServlet("/s09/loops")
 public class Loops extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(Loops.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -35,10 +35,5 @@ public class Loops extends HttpServlet {
         request.setAttribute("names", names);
 
         request.getRequestDispatcher("loops.jsp").forward(request, response);
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }

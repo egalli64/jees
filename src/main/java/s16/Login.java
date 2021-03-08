@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("serial")
 @WebServlet("/s16/login")
 public class Login extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(Login.class);
 
     @Override
@@ -25,12 +25,8 @@ public class Login extends HttpServlet {
         log.trace("user is " + user);
 
         // don't do that! sensitive data should be encrypted and stored in a safe place!
-        if ("superuser".equals(user) && "fido".equals(password)) {
-            request.getSession().setAttribute("logged", true);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        } else {
-            request.getSession().setAttribute("logged", false);
-            request.getRequestDispatcher("login.html").forward(request, response);
-        }
+        boolean vouched = "superuser".equals(user) && "fido".equals(password);
+        request.getSession().setAttribute("logged", vouched);
+        request.getRequestDispatcher(vouched ? "index.jsp" : "login.html").forward(request, response);
     }
 }
