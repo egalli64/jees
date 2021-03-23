@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- generic DOCTYPE XML declaration not accepted by JBOSS -->
 
-<!-- do not use JBoss setting -->
+<!-- see https://issues.redhat.com/browse/WFCORE-2995 -->
 <jboss-deployment-structure>
     <deployment>
-        <exclusions>
-            <module name="org.slf4j" />
-            <module name="org.slf4j.ext" />
-            <module name="org.slf4j.impl" />
-        </exclusions>
-
+        <exclude-subsystems>
+            <subsystem name="logging" />
+        </exclude-subsystems>
     </deployment>
 </jboss-deployment-structure>
 
