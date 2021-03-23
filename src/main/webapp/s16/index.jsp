@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" href="data:;base64,=">
-<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
+<link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
 <title>Welcome to the restricted area</title>
 </head>
 <body>

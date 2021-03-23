@@ -19,7 +19,7 @@ function callback() {
 
 document.getElementById('btnCheck').onclick = () => {
 	let name = document.getElementById('name');
-	let target = '/jes/s03/checkerPlain?user=' + name.value;
+	let target = '/jees/s03/checkerPlain?user=' + name.value;
 
 	let request = new XMLHttpRequest();
 	request.onload = callback;

@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <title>Feedback</title>
 <link rel="icon" href="data:;base64,=">
-<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
+<link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
 </head>
 <body>
     <h1>The greeter page</h1>
@@ -31,7 +31,7 @@
     </form>
     <a href="greeter"><button>Reset</button></a>
     <p>
-        Back <a href="/jes/index.html">home</a>
+        Back <a href="/jees/index.html">home</a>
     </p>
 </body>
 </html>

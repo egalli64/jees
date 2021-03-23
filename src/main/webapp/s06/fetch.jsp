@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <title>Hello EL</title>
 <link rel="icon" href="data:;base64,=">
-<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
+<link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
 </head>
 <body>
     <h1>Hello!</h1>
@@ -20,7 +20,7 @@
 
     <p>Request method (via page context): ${pageContext.request.method}</p>
     <p>
-        Back <a href="/jes/index.html">home</a>
+        Back <a href="/jees/index.html">home</a>
     </p>
 </body>
 </html>

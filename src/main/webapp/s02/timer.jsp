@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="icon" href="data:;base64,=">
-<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
+<link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
 <title>Hello JSP</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
     </h1>
     <%-- JSP comment --%>
     <p>
-        Back <a href="/jes/index.html">home</a>
+        Back <a href="/jees/index.html">home</a>
     </p>
 </body>
 </html>

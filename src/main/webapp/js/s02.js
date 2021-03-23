@@ -19,7 +19,7 @@ function timerResponseManager() {
 document.getElementById('btnServlet').addEventListener('click', () => {
 	let request = new XMLHttpRequest();
 	request.onload = timerResponseManager;
-	request.open('GET', '/jes/s02/timerPlain');
+	request.open('GET', '/jees/s02/timerPlain');
 	request.send();
 });
 
@@ -42,6 +42,6 @@ function usersResponseManager() {
 document.getElementById('btnServlet2').addEventListener('click', () => {
 	let request = new XMLHttpRequest();
 	request.onload = usersResponseManager;
-	request.open('GET', '/jes/s02/users');
+	request.open('GET', '/jees/s02/users');
 	request.send();
 });
