@@ -9,7 +9,7 @@
 
     <logger name="s09" level="trace" />
 
-    <root level="trace">
+    <root level="debug">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
