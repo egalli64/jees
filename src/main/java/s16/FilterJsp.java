@@ -11,12 +11,12 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @WebFilter(dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD }, urlPatterns = { "*.jsp" })
 public class FilterJsp implements Filter {
-    private static final Logger log = LoggerFactory.getLogger(FilterJsp.class);
+    private static final Logger log = LogManager.getLogger(FilterJsp.class);
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)

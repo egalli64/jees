@@ -10,18 +10,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
 @WebServlet("/s02/timer")
 public class Timer extends HttpServlet {
-    private static final Logger log = LoggerFactory.getLogger(Timer.class);
+    private static final Logger log = LogManager.getLogger(Timer.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         log.trace("called");
+        log.fatal("fatal");
+        log.error("test");
+        log.info("test");
+        log.debug("test");
 
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");

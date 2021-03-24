@@ -10,12 +10,12 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @WebFilter(urlPatterns = { "/s16/*" })
 public class FilterAll implements Filter {
-    private static final Logger log = LoggerFactory.getLogger(FilterAll.class);
+    private static final Logger log = LogManager.getLogger(FilterAll.class);
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
