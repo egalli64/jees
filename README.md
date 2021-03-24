@@ -1,8 +1,6 @@
-# jees
+# bossy jees 
 Java EE Servlet
 
 Introduction to Java EE on a Web Server
 
-Tested on
-- Tomcat 9
-- WildFly 20
+Tested on JBoss EAP 7.3
