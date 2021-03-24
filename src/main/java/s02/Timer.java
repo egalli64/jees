@@ -22,10 +22,6 @@ public class Timer extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         log.trace("called");
-        log.fatal("fatal");
-        log.error("test");
-        log.info("test");
-        log.debug("test");
 
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
