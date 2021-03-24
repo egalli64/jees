@@ -36,5 +36,5 @@
         <res-auth>Container</res-auth>
     </resource-ref>
 
-    <display-name>Maven Dynamic WebApp</display-name>
+    <display-name>Java EE Servlet</display-name>
 </web-app>

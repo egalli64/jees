@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xml>
-<jboss-web>
-    <resource-ref>
-        <res-ref-name>jdbc/me</res-ref-name>
-        <jndi-name>java:jboss/datasources/meDS</jndi-name>
-    </resource-ref>
-</jboss-web>

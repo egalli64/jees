@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
 <Context>
-	<!-- moved in Tomcat/WildFly configuration -->
+	<!-- moved in Tomcat configuration -->
 
 	<!-- MySQL -->
 	<!-- if mysql complains, try adding "?serverTimezone=Europe/Rome" to URL -->
