@@ -6,12 +6,12 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @WebListener
 public class MyContextListener implements ServletContextListener {
-    private static final Logger log = LoggerFactory.getLogger(MyContextListener.class);
+    private static final Logger log = LogManager.getLogger(MyContextListener.class);
 
     public void contextInitialized(ServletContextEvent sce) {
         log.trace("called");

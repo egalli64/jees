@@ -11,11 +11,11 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CoderDao implements AutoCloseable {
-    private static final Logger log = LoggerFactory.getLogger(CoderDao.class);
+    private static final Logger log = LogManager.getLogger(CoderDao.class);
     private static final String GET_ALL = "SELECT coder_id, first_name, last_name, hire_date, salary FROM coders";
     private Connection conn;
 

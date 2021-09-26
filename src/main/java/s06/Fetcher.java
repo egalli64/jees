@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import dd.Document;
 import dd.User;
@@ -17,7 +17,7 @@ import dd.User;
 @SuppressWarnings("serial")
 @WebServlet("/s06/fetch")
 public class Fetcher extends HttpServlet {
-    private static final Logger log = LoggerFactory.getLogger(Fetcher.class);
+    private static final Logger log = LogManager.getLogger(Fetcher.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
