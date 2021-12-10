@@ -17,12 +17,7 @@ public class Login extends HttpServlet {
         String user = request.getParameter("user");
         String password = request.getParameter("password");
 
-        String url;
-        if (user == null || user.isBlank() || password == null || password.isBlank()) {
-            url = "unknown.jsp";
-        } else {
-            url = "logged.jsp";
-        }
+        String url = user == null || user.isBlank() || password == null || password.isBlank() ? "unknown.jsp" : "logged.jsp";
 
         request.getRequestDispatcher(url).forward(request, response);
     }
