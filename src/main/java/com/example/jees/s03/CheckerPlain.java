@@ -16,8 +16,8 @@ import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
 @WebServlet("/s03/checkerPlain")
-public class Checker2 extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(Checker2.class);
+public class CheckerPlain extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(CheckerPlain.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
