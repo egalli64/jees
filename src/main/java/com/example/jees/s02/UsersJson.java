@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.example.jees.dao.User;
+import com.example.jees.bean.User;
 import com.google.gson.Gson;
 
 @SuppressWarnings("serial")

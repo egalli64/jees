@@ -1,4 +1,4 @@
-package com.example.jees.dao;
+package com.example.jees.bean;
 
 public class User {
     private String name;

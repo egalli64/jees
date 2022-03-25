@@ -1,4 +1,6 @@
-package com.example.jees.dao;
+package com.example.jees.s06;
+
+import com.example.jees.bean.User;
 
 public class Document {
     private String title;

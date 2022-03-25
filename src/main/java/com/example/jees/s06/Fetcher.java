@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.example.jees.dao.Document;
-import com.example.jees.dao.User;
+import com.example.jees.bean.User;
 
 @SuppressWarnings("serial")
 @WebServlet("/s06/fetch")
