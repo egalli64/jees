@@ -6,7 +6,11 @@
 <html>
 <head>
 <meta charset="utf-8">
-<sql:query dataSource="jdbc/me" var="coders">select * from coders</sql:query>
+<sql:query dataSource="jdbc/hron" var="coders">
+    SELECT employee_id, first_name, last_name, hired, salary
+    FROM employee
+    WHERE department_id = 6
+</sql:query>
 <title>Coders</title>
 <link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
@@ -18,12 +22,16 @@
             <th>id</th>
             <th>first name</th>
             <th>last name</th>
+            <th>hired</th>
+            <th>salary</th>
         </tr>
         <c:forEach var="cur" items="${coders.rows}">
             <tr>
-                <td>${cur.CODER_ID}</td>
+                <td>${cur.EMPLOYEE_ID}</td>
                 <td>${cur.FIRST_NAME}</td>
                 <td>${cur.LAST_NAME}</td>
+                <td>${cur.HIRED}</td>
+                <td>${cur.SALARY}</td>
             </tr>
         </c:forEach>
     </table>

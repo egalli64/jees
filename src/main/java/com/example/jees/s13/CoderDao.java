@@ -16,7 +16,10 @@ import org.apache.logging.log4j.Logger;
 
 public class CoderDao implements AutoCloseable {
     private static final Logger log = LogManager.getLogger(CoderDao.class);
-    private static final String GET_ALL = "SELECT coder_id, first_name, last_name, hire_date, salary FROM coders";
+    private static final String GET_ALL = """
+            SELECT employee_id, first_name, last_name, hired, salary
+            FROM employee
+            WHERE department_id = 6""";
     private Connection conn;
 
     public CoderDao(DataSource ds) {
@@ -36,7 +39,7 @@ public class CoderDao implements AutoCloseable {
         try (Statement stmt = conn.createStatement(); //
                 ResultSet rs = stmt.executeQuery(GET_ALL)) {
             while (rs.next()) {
-                LocalDate hired = rs.getDate("hire_date").toLocalDate();
+                LocalDate hired = rs.getDate("hired").toLocalDate();
                 Coder cur = new Coder(rs.getLong(1), rs.getString(2), rs.getString(3), hired, rs.getDouble(5));
                 results.add(cur);
             }

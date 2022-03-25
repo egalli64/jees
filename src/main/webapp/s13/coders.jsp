@@ -16,7 +16,7 @@
             <th>id</th>
             <th>first name</th>
             <th>last name</th>
-            <th>hire date</th>
+            <th>hired</th>
             <th>salary</th>
         </tr>
         <c:forEach var="coder" items="${coders}">
@@ -24,7 +24,7 @@
                 <td>${coder.id}</td>
                 <td>${coder.firstName}</td>
                 <td>${coder.lastName}</td>
-                <td>${coder.hireDate}</td>
+                <td>${coder.hired}</td>
                 <td>${coder.salary}</td>
             </tr>
         </c:forEach>

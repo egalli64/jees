@@ -6,7 +6,7 @@ public class Coder {
     private long id;
     private String firstName;
     private String lastName;
-    private LocalDate hireDate;
+    private LocalDate hired;
     private double salary;
 
     public Coder() {
@@ -20,11 +20,11 @@ public class Coder {
         this(id, firstName, lastName, LocalDate.now(), salary);
     }
 
-    public Coder(long id, String firstName, String lastName, LocalDate hireDate, double salary) {
+    public Coder(long id, String firstName, String lastName, LocalDate hired, double salary) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.hireDate = hireDate;
+        this.hired = hired;
         this.salary = salary;
     }
 
@@ -52,12 +52,12 @@ public class Coder {
         this.lastName = lastName;
     }
 
-    public LocalDate getHireDate() {
-        return hireDate;
+    public LocalDate getHired() {
+        return hired;
     }
 
-    public void setHireDate(LocalDate hireDate) {
-        this.hireDate = hireDate;
+    public void setHired(LocalDate hired) {
+        this.hired = hired;
     }
 
     public double getSalary() {
@@ -70,7 +70,7 @@ public class Coder {
 
     @Override
     public String toString() {
-        return "Coder [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hireDate=" + hireDate
+        return "Coder [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hired=" + hired
                 + ", salary=" + salary + "]";
     }
 }

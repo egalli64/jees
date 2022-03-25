@@ -5,10 +5,10 @@
 
 	<!-- MySQL -->
 	<!-- if mysql complains, try adding "?serverTimezone=Europe/Rome" to URL -->
-	<!-- <Resource name="jdbc/me" type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver" 
-		auth="Container" url="jdbc:mysql://localhost:3306/me" username="me" password="password" /> -->
+	<!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver" 
+		auth="Container" url="jdbc:mysql://localhost:3306/hron" username="hron" password="password" /> -->
 
 	<!-- Oracle DB 18c XE -->
-	<!-- <Resource name="jdbc/me" type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver" 
-		auth="Container" url="jdbc:oracle:thin:@127.0.0.1:1521/xepdb1" username="me" password="password" /> -->
+	<!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver" 
+		auth="Container" url="jdbc:oracle:thin:@127.0.0.1:1521/xepdb1" username="hron" password="password" /> -->
 </Context>

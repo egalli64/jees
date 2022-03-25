@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
 public class CodersSrv extends HttpServlet {
     private static final Logger log = LogManager.getLogger(CodersSrv.class);
 
-    @Resource(name = "jdbc/me")
+    @Resource(name = "jdbc/hron")
     private DataSource ds;
 
     @Override
