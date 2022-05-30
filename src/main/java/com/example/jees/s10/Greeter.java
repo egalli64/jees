@@ -25,9 +25,6 @@ public class Greeter extends HttpServlet {
 
         HttpSession session = request.getSession();
         String prevUser = (String) session.getAttribute("user");
-        if (prevUser == null) {
-            prevUser = "";
-        }
 
         if (user == null) {
             session.invalidate();
