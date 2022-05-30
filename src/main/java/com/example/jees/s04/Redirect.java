@@ -1,4 +1,4 @@
-package com.example.jees.s05;
+package com.example.jees.s04;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s05/redirect")
+@WebServlet("/s04/redirect")
 public class Redirect extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Redirect.class);
 

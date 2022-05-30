@@ -1,4 +1,4 @@
-package com.example.jees.s05;
+package com.example.jees.s04;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s05/send")
+@WebServlet("/s04/forward")
 public class Forward extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Forward.class);
 
@@ -22,13 +22,13 @@ public class Forward extends HttpServlet {
         log.debug("called for " + to);
 
         String destination = switch (to) {
-        case "timer" -> {
+        case "servlet" -> {
             log.trace("forward to timer servlet");
             yield "/s02/timer";
         }
-        case "checker" -> {
-            log.trace("forward to checker servlet");
-            yield "/s03/checker";
+        case "jsp" -> {
+            log.trace("forward to timer jsp");
+            yield "/s02/timer.jsp";
         }
         default -> {
             log.trace("forward back home");
