@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Servlet and AJAX</title>
-<script type="text/javascript" src="js/s03.js" defer></script>
+<script type="text/javascript" src="checker.js" defer></script>
 <link rel="stylesheet" type="text/css" href="css/simple.css">
 <link rel="icon" href="data:;base64,=">
 </head>
@@ -15,14 +15,14 @@
     </p>
 
 
-    <h2>Form send a request, the browser shows the response</h2>
+    <h2>Send a request by form, the browser shows the response</h2>
 
-    <form action="/jees/s03/checker" method="get">
+    <form action="checker">
         <label>User: <input name="user" placeholder="Enter your name"></label>
         <button>Go!</button>
     </form>
 
-    <h2>AJAX send a request and display the response</h2>
+    <h2>Send a request and display the response by AJAX</h2>
 
     <div>
         <label>User: <input id="name" placeholder="Enter your name"></label>

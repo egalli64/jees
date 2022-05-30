@@ -1,4 +1,4 @@
-package com.example.jees.s03;
+package com.example.jees.s05;
 
 import java.io.IOException;
 import java.util.Set;
@@ -15,7 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s03/checker")
+@WebServlet("/s05/checker")
 public class Checker extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Checker.class);
 
@@ -33,7 +33,7 @@ public class Checker extends HttpServlet {
         }
         request.setAttribute("set", set);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/s03/checker.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("checker.jsp");
         rd.forward(request, response);
 
         // same as above, in a more compact way

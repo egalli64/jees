@@ -1,4 +1,4 @@
-package com.example.jees.s04;
+package com.example.jees.s05;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -13,9 +13,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s04/process")
-public class FormProcessor extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(FormProcessor.class);
+@WebServlet("/s05/paramForwarder")
+public class ParamForwarder extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(ParamForwarder.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,6 +37,6 @@ public class FormProcessor extends HttpServlet {
         }
 
         request.setAttribute("result", result.toString());
-        request.getRequestDispatcher("feedback.jsp").forward(request, response);
+        request.getRequestDispatcher("paramForwarded.jsp").forward(request, response);
     }
 }

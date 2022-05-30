@@ -1,5 +1,5 @@
 /*
- * See s03.html
+ * See checker.html
  *
  * Requires access to the DOM
  */
@@ -19,7 +19,7 @@ function callback() {
 
 document.getElementById('btnCheck').onclick = () => {
 	let name = document.getElementById('name');
-	let target = '/jees/s03/checkerPlain?user=' + name.value;
+	let target = 'checkerPlain?user=' + name.value;
 
 	let request = new XMLHttpRequest();
 	request.onload = callback;

@@ -1,4 +1,4 @@
-package com.example.jees.s03;
+package com.example.jees.s05;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s03/checkerPlain")
+@WebServlet("/s05/checkerPlain")
 public class CheckerPlain extends HttpServlet {
     private static final Logger log = LogManager.getLogger(CheckerPlain.class);
 
