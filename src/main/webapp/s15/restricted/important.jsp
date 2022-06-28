@@ -9,7 +9,7 @@
 <body>
     <h1>Not everybody could see this page</h1>
     <p>
-        Back to (restricted) <a href="/jees/s16/index.jsp">home</a>
+        Back to (restricted) <a href="/jees/s15/index.jsp">home</a>
     </p>
 </body>
 </html>

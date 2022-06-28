@@ -1,4 +1,4 @@
-package com.example.jees.s15;
+package com.example.jees.s14;
 
 import java.time.LocalTime;
 
@@ -14,7 +14,7 @@ public class MyContextListener implements ServletContextListener {
     private static final Logger log = LogManager.getLogger(MyContextListener.class);
 
     public void contextInitialized(ServletContextEvent sce) {
-        log.trace("called");
+        log.traceEntry();
         sce.getServletContext().setAttribute("start", LocalTime.now());
     }
 }

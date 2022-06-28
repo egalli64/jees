@@ -1,4 +1,4 @@
-package com.example.jees.s16;
+package com.example.jees.s15;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s16/login")
+@WebServlet("/s15/login")
 public class Login extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Login.class);
 

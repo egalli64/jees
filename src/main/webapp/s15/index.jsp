@@ -16,7 +16,7 @@
             <p>The <a href="restricted/important.jsp">important</a> document</p>
         </c:when>
         <c:otherwise>
-            <p>Please, <a href="restricted/login.html">login</a> to have access (once) to the area</p>
+            <p>Please, <a href="login.html">login</a> to have access (once) to the area</p>
         </c:otherwise>
     </c:choose>
 

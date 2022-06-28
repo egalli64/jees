@@ -1,4 +1,4 @@
-package com.example.jees.s16;
+package com.example.jees.s15;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@WebFilter(urlPatterns = { "/s16/restricted/*" })
+@WebFilter(urlPatterns = { "/s15/restricted/*" })
 public class FilterRestricted implements Filter {
     private static final Logger log = LogManager.getLogger(FilterRestricted.class);
 
