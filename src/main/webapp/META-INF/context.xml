@@ -11,4 +11,6 @@
 	<!-- Oracle DB 18c XE -->
 	<!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver" 
 		auth="Container" url="jdbc:oracle:thin:@127.0.0.1:1521/xepdb1" username="hron" password="password" /> -->
+    <!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
+        auth="Container" url="jdbc:postgresql://localhost:5432/postgres?currentSchema=hron" username="hron" password="password" /> -->
 </Context>
