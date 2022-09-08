@@ -9,11 +9,14 @@
 </head>
 <body>
     <p>
-        The passed parameters are: <%=request.getAttribute("result")%>
+        The passed parameters are: <%=request.getAttribute("result")%> (legacy)
+    </p>
+    <p>
+        The passed parameters are: ${result} (EL)
     </p>
 
-    <p>
+    <nav>
         Back <a href="/jees/index.html">home</a>
-    </p>
+    </nav>
 </body>
 </html>
