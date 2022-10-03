@@ -27,9 +27,9 @@ public class ParamReader extends HttpServlet {
             log.trace("Name: " + name);
         }
 
-        String[] colors = request.getParameterValues("color");
+        String[] colors = request.getParameterValues("colors");
         if (colors == null) {
-            log.warn("No color passed as parameter!");
+            log.warn("No colors passed as parameter!");
         } else {
             log.trace(String.format("%s as colors", Arrays.toString(colors)));
         }
@@ -39,6 +39,5 @@ public class ParamReader extends HttpServlet {
         try (PrintWriter writer = response.getWriter()) {
             writer.println(name + " -> " + Arrays.toString(colors));
         }
-
     }
 }
