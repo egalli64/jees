@@ -16,8 +16,8 @@
         %>
     </h1>
     <%-- JSP comment --%>
-    <p>
+    <nav>
         Back <a href="/jees/index.html">home</a>
-    </p>
+    </nav>
 </body>
 </html>
