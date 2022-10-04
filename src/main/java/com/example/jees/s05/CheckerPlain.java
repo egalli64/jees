@@ -23,7 +23,7 @@ public class CheckerPlain extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
-        log.trace("User is {" + user + "}");
+        log.trace("Parameter user is '{}'", user);
 
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
@@ -34,6 +34,7 @@ public class CheckerPlain extends HttpServlet {
             for (char c : user.toCharArray()) {
                 set.add(Character.toLowerCase(c));
             }
+            log.debug("Local set is {}", set);
 
             try (PrintWriter writer = response.getWriter()) {
                 for (Character c : set) {

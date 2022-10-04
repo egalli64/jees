@@ -23,7 +23,7 @@ public class Checker extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
-        log.debug("User is {" + user + "}");
+        log.debug("Parameter user is '{}'", user);
 
         Set<Character> set = new TreeSet<>();
         if (user != null) {
@@ -32,11 +32,11 @@ public class Checker extends HttpServlet {
             }
         }
         request.setAttribute("set", set);
+        log.debug("Attribute set is {}", set);
 
-        RequestDispatcher rd = request.getRequestDispatcher("checker.jsp");
-        rd.forward(request, response);
-
-        // same as above, in a more compact way
-        // request.getRequestDispatcher("checker.jsp").forward(request, response);
+        request.getRequestDispatcher("checker.jsp").forward(request, response);
+        // same as above, in a more verbose way
+//        RequestDispatcher rd = request.getRequestDispatcher("checker.jsp");
+//        rd.forward(request, response);
     }
 }

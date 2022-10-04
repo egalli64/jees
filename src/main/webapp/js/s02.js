@@ -1,5 +1,5 @@
 /*
- * See s02.html
+ * See s02/ajax.html
  *
  * Requires access to the DOM
  */
