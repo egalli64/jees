@@ -19,16 +19,6 @@
         <param-value>password</param-value>
     </context-param>
 
-    <!-- slide 12 -->
-<!--     <error-page> -->
-<!--         <error-code>404</error-code> -->
-<!--         <location>/s12/404.jsp</location> -->
-<!--     </error-page> -->
-<!--     <error-page> -->
-<!--         <error-code>500</error-code> -->
-<!--         <location>/s12/500.jsp</location> -->
-<!--     </error-page> -->
-
     <!-- slide 13 -->
     <resource-ref>
         <res-ref-name>jdbc/hron</res-ref-name>
@@ -36,5 +26,5 @@
         <res-auth>Container</res-auth>
     </resource-ref>
 
-    <display-name>Java EE Servlet</display-name>
+    <display-name>JEE Servlet</display-name>
 </web-app>
