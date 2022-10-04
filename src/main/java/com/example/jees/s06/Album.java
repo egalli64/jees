@@ -1,4 +1,4 @@
-package com.example.jees.s10;
+package com.example.jees.s06;
 
 import java.io.Serializable;
 
@@ -45,5 +45,4 @@ public class Album implements Serializable {
     public String toString() {
         return "Album [id=" + id + ", title=" + title + ", quantity=" + quantity + "]";
     }
-
 }

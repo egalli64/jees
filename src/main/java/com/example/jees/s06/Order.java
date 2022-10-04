@@ -1,4 +1,4 @@
-package com.example.jees.s10;
+package com.example.jees.s06;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,9 +15,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s10/nullOrder")
-public class PlaceNullOrder extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(PlaceNullOrder.class);
+@WebServlet("/s06/order")
+public class Order extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(Order.class);
 
     private Map<String, Album> createEmptyOrder() {
         Map<String, Album> result = new HashMap<>();
@@ -57,12 +57,9 @@ public class PlaceNullOrder extends HttpServlet {
             throw ex;
         }
 
-        int total = 0;
-        for (Album current : orders.values()) {
-            total += current.getQuantity();
-        }
+        int total = orders.values().stream().mapToInt(Album::getQuantity).sum();
         request.setAttribute("total", total);
 
-        request.getRequestDispatcher("buyNull.jsp").forward(request, response);
+        request.getRequestDispatcher("buy.jsp").forward(request, response);
     }
 }

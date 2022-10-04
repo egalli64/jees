@@ -1,4 +1,4 @@
-package com.example.jees.s10;
+package com.example.jees.s06;
 
 import java.io.IOException;
 import java.util.Map;
@@ -14,22 +14,24 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s10/buyNull")
-public class BuyNull extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(BuyNull.class);
+@WebServlet("/s06/buy")
+public class Buy extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(Buy.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        log.trace("called");
+        log.traceEntry();
 
         HttpSession session = request.getSession(false);
         if (session != null) {
             @SuppressWarnings("unchecked")
             Map<String, Album> orders = (Map<String, Album>) session.getAttribute("orders");
-            request.setAttribute("albums", orders.values());
+            if (orders != null) {
+                request.setAttribute("albums", orders.values());
+            }
             session.invalidate();
         }
 
-        request.getRequestDispatcher("buyNullDone.jsp").forward(request, response);
+        request.getRequestDispatcher("done.jsp").forward(request, response);
     }
 }
