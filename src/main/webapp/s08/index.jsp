@@ -13,12 +13,17 @@
 
     <c:choose>
         <c:when test="${logged eq true}">
-            <p>The <a href="restricted/important.jsp">important</a> document</p>
+            <p>An <a href="restricted/important.html">important</a> document</p>
+            <p>An <a href="restricted/hello">important</a> servlet</p>
         </c:when>
         <c:otherwise>
-            <p>Please, <a href="login.html">login</a> to have access (once) to the area</p>
+            <p>Please, login to have access (once) to the area</p>
+            <form action="login" method="post">
+                <label>User: <input name="user"></label>
+                <label>Password: <input type="password" name="password"></label>
+                <button>OK</button>
+            </form>
         </c:otherwise>
     </c:choose>
-
 </body>
 </html>

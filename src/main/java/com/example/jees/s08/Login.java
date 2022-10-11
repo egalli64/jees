@@ -1,4 +1,4 @@
-package com.example.jees.s15;
+package com.example.jees.s08;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s15/login")
+@WebServlet("/s08/login")
 public class Login extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Login.class);
 
@@ -27,6 +27,6 @@ public class Login extends HttpServlet {
         // don't do that! sensitive data should be encrypted and stored in a safe place!
         boolean vouched = "superuser".equals(user) && "fido".equals(password);
         request.getSession().setAttribute("logged", vouched);
-        request.getRequestDispatcher(vouched ? "index.jsp" : "login.html").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

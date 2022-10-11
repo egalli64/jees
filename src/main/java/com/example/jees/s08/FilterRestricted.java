@@ -1,4 +1,4 @@
-package com.example.jees.s15;
+package com.example.jees.s08;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@WebFilter(urlPatterns = { "/s15/restricted/*" })
+@WebFilter(urlPatterns = { "/s08/restricted/*" })
 public class FilterRestricted implements Filter {
     private static final Logger log = LogManager.getLogger(FilterRestricted.class);
 
@@ -36,11 +36,11 @@ public class FilterRestricted implements Filter {
 
         log.trace("Access to restricted area is " + logged);
         if (logged == null || !logged) {
-            // new request, the URL is _not_ relative to the current web app
-            ((HttpServletResponse) response).sendRedirect("/jees/s15/login.html");
+            // new request generated, not implicitly to the same web app
+            ((HttpServletResponse) response).sendRedirect("/jees/s08/index.jsp");
 
             // use this to keep the original request
-//                request.getRequestDispatcher("/s15/login.html").forward(request, response);
+//                request.getRequestDispatcher("/s08/index.jsp").forward(request, response);
 
             // in both case, remember to end here the filtering
             return;

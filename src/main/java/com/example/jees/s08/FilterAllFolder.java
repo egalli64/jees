@@ -1,4 +1,4 @@
-package com.example.jees.s15;
+package com.example.jees.s08;
 
 import java.io.IOException;
 
@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@WebFilter(urlPatterns = { "/s15/*" })
-public class FilterAll implements Filter {
-    private static final Logger log = LogManager.getLogger(FilterAll.class);
+@WebFilter(urlPatterns = { "/s08/*" })
+public class FilterAllFolder implements Filter {
+    private static final Logger log = LogManager.getLogger(FilterAllFolder.class);
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)

@@ -1,4 +1,4 @@
-package com.example.jees.s15;
+package com.example.jees.s08;
 
 import java.io.IOException;
 
@@ -15,8 +15,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @WebFilter(dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD }, urlPatterns = { "*.jsp" })
-public class FilterJsp implements Filter {
-    private static final Logger log = LogManager.getLogger(FilterJsp.class);
+public class FilterAllJsp implements Filter {
+    private static final Logger log = LogManager.getLogger(FilterAllJsp.class);
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)

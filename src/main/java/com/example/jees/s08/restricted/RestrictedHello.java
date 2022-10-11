@@ -1,4 +1,4 @@
-package com.example.jees.s15.restricted;
+package com.example.jees.s08.restricted;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s15/restricted/hello")
+@WebServlet("/s08/restricted/hello")
 public class RestrictedHello extends HttpServlet {
     private static final Logger log = LogManager.getLogger(RestrictedHello.class);
 
