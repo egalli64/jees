@@ -1,4 +1,4 @@
-package com.example.jees.s13;
+package com.example.jees.s07;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WebServlet("/s13/coders")
+@WebServlet("/s07/coders")
 public class CodersSrv extends HttpServlet {
     private static final Logger log = LogManager.getLogger(CodersSrv.class);
 
