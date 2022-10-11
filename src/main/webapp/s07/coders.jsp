@@ -29,8 +29,8 @@
             </tr>
         </c:forEach>
     </table>
-    <p>
+    <nav>
         Back <a href="/jees/index.html">home</a>
-    </p>
+    </nav>
 </body>
 </html>

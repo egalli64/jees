@@ -15,15 +15,15 @@
         <res-auth>Container</res-auth>
     </resource-ref>
 
-    <!-- slide 11 -->
+    <!-- slide 9 -->
     <context-param>
         <param-name>admin</param-name>
-        <param-value>Tom</param-value>
+        <param-value>Tom Darmstadtium</param-value>
     </context-param>
 
     <context-param>
-        <param-name>adminPassword</param-name>
-        <param-value>password</param-value>
+        <param-name>birthday</param-name>
+        <param-value>1994-11-09</param-value>
     </context-param>
 
     <display-name>JEE Servlet</display-name>

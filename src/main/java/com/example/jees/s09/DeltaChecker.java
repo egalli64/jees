@@ -1,4 +1,4 @@
-package com.example.jees.s14;
+package com.example.jees.s09;
 
 import java.io.IOException;
 import java.time.LocalTime;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/s14/delta")
+@WebServlet("/s09/delta")
 public class DeltaChecker extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
