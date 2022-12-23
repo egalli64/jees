@@ -1,5 +1,13 @@
+/*
+ * Introduction to Jakarta Enterprise Edition - Servlet
+ * 
+ * https://github.com/egalli64/jees
+ */
 package com.example.jees.bean;
 
+/**
+ * A simple JavaBean
+ */
 public class User {
     private String name;
     private int id;

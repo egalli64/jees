@@ -1,3 +1,7 @@
+<%-- 
+    Introduction to Jakarta Enterprise Edition - Servlet
+    https://github.com/egalli64/jees
+ --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -10,6 +14,10 @@
 </head>
 <body>
     <h1>Restricted area</h1>
+    <nav>
+        <a href="/jees/index.html">Home</a>
+    </nav>
+    
 
     <c:choose>
         <c:when test="${logged eq true}">

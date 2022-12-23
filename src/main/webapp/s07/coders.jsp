@@ -1,3 +1,7 @@
+<%-- 
+    Introduction to Jakarta Enterprise Edition - Servlet
+    https://github.com/egalli64/jees
+ --%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -7,10 +11,16 @@
 <meta charset="utf-8">
 <title>Coders</title>
 <link rel="icon" href="data:;base64,=">
-<link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
+<link rel="stylesheet" href="/jees/css/simple.css">
 </head>
 <body>
-    <h1>Coders</h1>
+    <header>
+        <h1>Coders</h1>
+        <nav>
+            <a href="/jees/index.html">Home</a>
+        </nav>
+    </header>
+
     <table>
         <tr>
             <th>id</th>
@@ -29,8 +39,5 @@
             </tr>
         </c:forEach>
     </table>
-    <nav>
-        Back <a href="/jees/index.html">home</a>
-    </nav>
 </body>
 </html>

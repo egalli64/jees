@@ -1,3 +1,7 @@
+<%-- 
+    Introduction to Jakarta Enterprise Edition - Servlet
+    https://github.com/egalli64/jees
+ --%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.time.LocalTime"%>
 <!DOCTYPE html>
@@ -9,15 +13,15 @@
 <title>Hello JSP</title>
 </head>
 <body>
-    <!-- HTML comment -->
+    <!-- a HTML comment -->
+    <nav>
+        <a href="/jees/index.html">Home</a>
+    </nav>
     <h1>
         <%
         out.print(LocalTime.now());
         %>
     </h1>
-    <%-- JSP comment --%>
-    <nav>
-        Back <a href="/jees/index.html">home</a>
-    </nav>
+    <%-- a JSP comment --%>
 </body>
 </html>

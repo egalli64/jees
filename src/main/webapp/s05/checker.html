@@ -1,29 +1,29 @@
-<!DOCTYPE html>
+<!-- 
+    Introduction to Jakarta Enterprise Edition - Servlet
+    https://github.com/egalli64/jees
+ -->
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Servlet and AJAX</title>
 <script type="text/javascript" src="/jees/js/s05.js" defer></script>
-<link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
+<link rel="stylesheet" href="/jees/css/simple.css">
 <link rel="icon" href="data:;base64,=">
 </head>
 <body>
     <h1>Calling a servlet</h1>
-
     <nav>
-        Back <a href="/jees/index.html">home</a>
+        <a href="/jees/index.html">Home</a>
     </nav>
 
-
     <h2>Send a request by form, the browser shows the response</h2>
-
     <form action="checker">
         <label>User: <input name="user" placeholder="Enter your name"></label>
         <button>Go!</button>
     </form>
 
     <h2>Send a request and display the response by AJAX</h2>
-
     <div>
         <label>User: <input id="name" placeholder="Enter your name"></label>
         <button id="btnCheck">Go!</button>

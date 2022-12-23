@@ -1,3 +1,8 @@
+/*
+ * Introduction to Jakarta Enterprise Edition - Servlet
+ * 
+ * https://github.com/egalli64/jees
+ */
 package com.example.jees.s07;
 
 import java.time.LocalDate;

@@ -1,3 +1,7 @@
+<%-- 
+    Introduction to Jakarta Enterprise Edition - Servlet
+    https://github.com/egalli64/jees
+ --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:if test="${empty user}">
@@ -10,7 +14,7 @@
 <meta charset="UTF-8">
 <title>The NPB store</title>
 <link rel="icon" href="data:;base64,=">
-<link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
+<link rel="stylesheet" href="/jees/css/simple.css">
 </head>
 <body>
     <h1>Buy Vinyls from <i>The Null Pointer Band</i></h1>

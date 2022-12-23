@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Introduction to Jakarta Enterprise Edition - Servlet -->
+<!-- https://github.com/egalli64/jees -->
 <!DOCTYPE xml>
 <Context>
-	<!-- moved in Tomcat configuration -->
+    <!-- Put the relevant resource element in Tomcat configuration -->
 
-	<!-- MySQL -->
-	<!-- if mysql complains, try adding "?serverTimezone=Europe/Rome" to URL -->
-	<!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver" 
-		auth="Container" url="jdbc:mysql://localhost:3306/hron" username="hron" password="password" /> -->
+    <!-- PostgreSQL -->
+    <!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" -->
+    <!-- driverClassName="org.postgresql.Driver" auth="Container" -->
+    <!-- url="jdbc:postgresql://localhost:5432/postgres?currentSchema=hron" username="hron" -->
+    <!-- password="password" /> -->
 
-	<!-- Oracle DB 18c XE -->
-	<!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver" 
-		auth="Container" url="jdbc:oracle:thin:@127.0.0.1:1521/xepdb1" username="hron" password="password" /> -->
-    <!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
-        auth="Container" url="jdbc:postgresql://localhost:5432/postgres?currentSchema=hron" username="hron" password="password" /> -->
+    <!-- MySQL -->
+    <!-- if mysql complains, try adding "?serverTimezone=Europe/Rome" to URL -->
+    <!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver" 
+        auth="Container" url="jdbc:mysql://localhost:3306/hron" username="hron" password="password"/> -->
+
+    <!-- Oracle DB 18c XE -->
+    <!-- <Resource name="jdbc/hron" type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver" 
+        auth="Container" url="jdbc:oracle:thin:@127.0.0.1:1521/xepdb1" username="hron" password="password"/> -->
 </Context>

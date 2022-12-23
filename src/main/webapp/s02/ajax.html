@@ -1,3 +1,7 @@
+<!-- 
+    Introduction to Jakarta Enterprise Edition - Servlet
+    https://github.com/egalli64/jees
+ -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,22 +9,25 @@
 <title>Servlets by AJAX</title>
 <script src="/jees/js/s02.js" defer></script>
 <link rel="icon" href="data:;base64,=">
-<link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
+<link rel="stylesheet" href="/jees/css/simple.css">
 </head>
 <body>
-    <h1>Servlets by AJAX</h1>
+    <header>
+        <h1>Servlets by AJAX</h1>
+        <nav>
+            <a href="/jees/index.html">Home</a>
+        </nav>
+    </header>
 
-    <nav>
-        Back <a href="/jees/index.html">home</a>
-    </nav>
-
+    <h2>Get plain text</h2>
     <div>
-        <button id="btnServlet">Get</button>
-        <input id="target" readonly placeholder="push the button">
+        <button id="btnTime">Time</button>
+        <input id="time" readonly placeholder="push the button">
     </div>
+    <h2>Get JSON</h2>
     <div>
-        <button id="btnServlet2">Get</button>
-        <input id="target2" readonly placeholder="push the button">
+        <button id="btnUsers">Users</button>
+        <input id="users" readonly placeholder="push the button">
     </div>
 </body>
 </html>
