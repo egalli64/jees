@@ -7,7 +7,9 @@ package com.example.jees.s05;
 
 import java.io.IOException;
 import java.util.Set;
-import java.util.TreeSet;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,32 +17,32 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+/**
+ * A simple servlet that uses a service and then pass the control to a JSP
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s05/checker")
 public class Checker extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Checker.class);
+    private static final CheckerService service = CheckerService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        // 1. extract parameters from the request
         String user = request.getParameter("user");
         log.debug("Parameter user is '{}'", user);
 
-        Set<Character> set = new TreeSet<>();
-        if (user != null) {
-            for (char c : user.toCharArray()) {
-                set.add(Character.toLowerCase(c));
-            }
-        }
-        request.setAttribute("set", set);
-        log.debug("Attribute set is {}", set);
+        // 2. access the business layer through the service
+        Set<Character> set = service.check(user);
 
+        // 3. put the data in request attributes
+        request.setAttribute("set", set);
+
+        // 4. pass the control to the associated JSP
         request.getRequestDispatcher("checker.jsp").forward(request, response);
         // same as above, in a more verbose way
-//        RequestDispatcher rd = request.getRequestDispatcher("checker.jsp");
-//        rd.forward(request, response);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("checker.jsp");
+//        dispatcher.forward(request, response);
     }
 }
