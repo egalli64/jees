@@ -31,8 +31,11 @@ public class Timer extends HttpServlet {
             throws ServletException, IOException {
         log.traceEntry();
 
+        // 1. prepare the response, setting its type and encoding
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
+
+        // 2. fill the response with static data
         try (PrintWriter writer = response.getWriter()) {
             writer.println("<!DOCTYPE html>");
             writer.println("<html>");
@@ -46,10 +49,12 @@ public class Timer extends HttpServlet {
             writer.println("<nav>");
             writer.println("<a href=\"..\\index.html\">Home</a>");
             writer.println("</nav>");
+
+            // 3. put some dynamically generated data in the response
             writer.println("<h1>" + LocalTime.now() + "</h1>");
+
             writer.println("</body>");
             writer.println("</html>");
-
         }
     }
 }

@@ -18,6 +18,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * A text-generating servlet (a bit too raw)
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s02/timerPlain")
 public class TimerPlain extends HttpServlet {
@@ -28,9 +31,11 @@ public class TimerPlain extends HttpServlet {
             throws ServletException, IOException {
         log.traceEntry();
 
+        // 1. prepare the response, setting its type and encoding
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
         try (PrintWriter writer = response.getWriter()) {
+            // 2. put some dynamically generated data in the response
             writer.println(LocalTime.now());
         }
     }
