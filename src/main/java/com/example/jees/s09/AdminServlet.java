@@ -17,18 +17,24 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Access to servlet context parameters
+ * <p>
+ * They are set in web.xml configuration file
+ */
 @SuppressWarnings("serial")
-@WebServlet("/s09/checkAdminBirthday")
-public class CheckAdminBirthday extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(CheckAdminBirthday.class);
+@WebServlet("/s09/admin")
+public class AdminServlet extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(AdminServlet.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        log.trace("called");
+        log.traceEntry();
 
-        LocalDate birthday = LocalDate.parse(getServletContext().getInitParameter("birthday"));
+        LocalDate check = LocalDate.parse(getServletContext().getInitParameter("birthday"));
         LocalDate today = LocalDate.now();
-        request.setAttribute("birthday", birthday.getDayOfMonth() == today.getDayOfMonth() && birthday.getMonth() == today.getMonth());
-        request.getRequestDispatcher("adminBirthday.jsp").forward(request, response);
+        request.setAttribute("birthday",
+                check.getDayOfMonth() == today.getDayOfMonth() && check.getMonth() == today.getMonth());
+        request.getRequestDispatcher("admin.jsp").forward(request, response);
     }
 }
