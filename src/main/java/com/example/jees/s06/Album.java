@@ -5,10 +5,10 @@
  */
 package com.example.jees.s06;
 
-import java.io.Serializable;
-
-@SuppressWarnings("serial")
-public class Album implements Serializable {
+/**
+ * A simple JavaBean
+ */
+public class Album {
     private int id;
     private String title;
     private int quantity;

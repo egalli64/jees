@@ -18,6 +18,9 @@ import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Buy servlet
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s06/buy")
 public class Buy extends HttpServlet {
@@ -27,15 +30,13 @@ public class Buy extends HttpServlet {
             throws ServletException, IOException {
         log.traceEntry();
 
-        HttpSession session = request.getSession(false);
-        if (session != null) {
-            @SuppressWarnings("unchecked")
-            Map<String, Album> orders = (Map<String, Album>) session.getAttribute("orders");
-            if (orders != null) {
-                request.setAttribute("albums", orders.values());
-            }
-            session.invalidate();
+        HttpSession session = request.getSession();
+        @SuppressWarnings("unchecked")
+        Map<String, Album> orders = (Map<String, Album>) session.getAttribute("orders");
+        if (orders != null) {
+            request.setAttribute("albums", orders.values());
         }
+        session.invalidate();
 
         request.getRequestDispatcher("done.jsp").forward(request, response);
     }

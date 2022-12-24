@@ -17,6 +17,9 @@ import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Login servlet
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s06/login")
 public class Login extends HttpServlet {
@@ -25,7 +28,7 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
-        log.trace("Parameter user is {}", user);
+        log.traceEntry("Parameter user is {}", user);
 
         HttpSession session = request.getSession();
         session.setAttribute("user", user == null || user.isBlank() ? "unknown" : user);

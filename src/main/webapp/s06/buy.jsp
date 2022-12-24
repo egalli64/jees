@@ -4,12 +4,15 @@
  --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:if test="${empty user}">
+
+<%-- user unknown, go to login --%>
+<c:if test="${empty sessionScope.user}">
     <c:redirect url="/s06/home.jsp" />
 </c:if>
 
+<%-- only if user is logged, buy is available --%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>The NPB store</title>
@@ -19,7 +22,7 @@
 <body>
     <h1>Buy Vinyls from <i>The Null Pointer Band</i></h1>
     <nav>
-        <a href="/jees/s06/home.html">home</a>
+        <a href="/jees/s06/home.html">Store home</a>
     </nav>
 
     <h2>Your order</h2>
@@ -34,6 +37,7 @@
         <button>Get</button>
     </form>
 
+    <%-- only if total is one or more, ordering is available --%>
     <c:if test="${total ne null and total ne 0}">
         <p>You have ${total} of our vinyls in order. Thank you!</p>
         <h2>Send the order</h2>

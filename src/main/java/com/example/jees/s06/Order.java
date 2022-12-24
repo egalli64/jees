@@ -19,11 +19,19 @@ import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Ordering servlet
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s06/order")
 public class Order extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Order.class);
 
+    /**
+     * Fake order generation
+     * 
+     * @return a new empty order
+     */
     private Map<String, Album> createEmptyOrder() {
         Map<String, Album> result = new HashMap<>();
         result.put("1", new Album(1, "Null", 0));
