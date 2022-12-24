@@ -18,26 +18,30 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Filter applied on all the resources in the specified folder
+ */
 @WebFilter(urlPatterns = { "/s08/*" })
-public class FilterAllFolder implements Filter {
-    private static final Logger log = LogManager.getLogger(FilterAllFolder.class);
+public class FolderFilter implements Filter {
+    private static final Logger log = LogManager.getLogger(FolderFilter.class);
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         if (!(request instanceof HttpServletRequest)) {
+            // quietly reject non-web requests
             log.error("Only HttpServletRequest are accepted");
             return;
         }
 
-        // filter in
+        // 1. filter in
         HttpServletRequest hsr = (HttpServletRequest) request;
-        String url = hsr.getRequestURL().toString();
-        log.trace("filter in " + url);
+        log.trace("Requesting {}", hsr.getRequestURL().toString());
 
+        // 2. pass the control to the next filter or actual resource
         chain.doFilter(request, response);
 
-        // filter out
+        // 3. filter out
 //        log.trace("filter out " + url.toString());
     }
 }

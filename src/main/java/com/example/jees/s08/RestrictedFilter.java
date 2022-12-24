@@ -21,8 +21,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @WebFilter(urlPatterns = { "/s08/restricted/*" })
-public class FilterRestricted implements Filter {
-    private static final Logger log = LogManager.getLogger(FilterRestricted.class);
+public class RestrictedFilter implements Filter {
+    private static final Logger log = LogManager.getLogger(RestrictedFilter.class);
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)

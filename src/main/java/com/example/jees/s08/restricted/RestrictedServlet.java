@@ -17,10 +17,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * This servlet should be accessed only by registered users
+ */
 @SuppressWarnings("serial")
-@WebServlet("/s08/restricted/hello")
-public class RestrictedHello extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(RestrictedHello.class);
+@WebServlet("/s08/restricted/important")
+public class RestrictedServlet extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(RestrictedServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
