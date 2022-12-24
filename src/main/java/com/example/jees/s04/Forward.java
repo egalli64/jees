@@ -16,6 +16,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * A forwarding servlet
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s04/forward")
 public class Forward extends HttpServlet {
@@ -24,23 +27,16 @@ public class Forward extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String to = request.getParameter("to");
-        log.debug("called for " + to);
+        log.traceEntry("called for {}", to);
 
+        // destination could be set here to a servlet, a jsp, a plain HTML page
         String destination = switch (to) {
-        case "servlet" -> {
-            log.trace("forward to timer servlet");
-            yield "/s02/timer";
-        }
-        case "jsp" -> {
-            log.trace("forward to timer jsp");
-            yield "/s02/timer.jsp";
-        }
-        default -> {
-            log.trace("forward back home");
-            yield "/";
-        }
+        case "servlet" -> "/s02/timer";
+        case "jsp" -> "/s02/timer.jsp";
+        default -> "/index.html";
         };
 
+        log.trace("Forwarding to {}", destination);
         request.getRequestDispatcher(destination).forward(request, response);
     }
 }

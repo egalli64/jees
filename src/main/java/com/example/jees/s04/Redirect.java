@@ -16,6 +16,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * A redirecting servlet
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s04/redirect")
 public class Redirect extends HttpServlet {
@@ -23,7 +26,7 @@ public class Redirect extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        log.trace("redirect to Apache Tomcat");
+        log.traceEntry("redirect to Apache Tomcat");
         response.sendRedirect("https://tomcat.apache.org/");
     }
 }

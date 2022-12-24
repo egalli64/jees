@@ -18,6 +18,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * A parameter checking servlet
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s03/paramReader")
 public class ParamReader extends HttpServlet {
@@ -25,6 +28,7 @@ public class ParamReader extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        // get a parameter, single value expected
         String name = request.getParameter("name");
         if (name == null || name.isBlank()) {
             log.warn("No name passed as parameter!");
@@ -32,6 +36,7 @@ public class ParamReader extends HttpServlet {
             log.trace("Name: " + name);
         }
 
+        // get a parameter, possibly more values expected
         String[] colors = request.getParameterValues("colors");
         if (colors == null) {
             log.warn("No colors passed as parameter!");

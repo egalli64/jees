@@ -18,11 +18,14 @@
         </nav>
     </header>
     
+    <!-- On submit a GET is generated for /jees/s03/paramReader -->
     <form action="paramReader">
         <div>
+            <!-- Parameter "name" with a single value (possibly empty) -->
             <label>Name: <input name="name" value="Bob"></label>
         </div>
         <div>
+            <!-- Parameter "colors" with [0..3] values -->
             <label>Red <input type="checkbox" name="colors" value="red" checked></label>
             <label>Green <input type="checkbox" name="colors" value="green" checked></label>
             <label>Blue <input type="checkbox" name="colors" value="blue" checked></label>
