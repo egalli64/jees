@@ -19,49 +19,69 @@ import javax.sql.DataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * DAO for Coder
+ * 
+ * @see Coder
+ */
 public class CoderDao implements AutoCloseable {
     private static final Logger log = LogManager.getLogger(CoderDao.class);
+
+    /** SELECT all coders, as employees from department IT */
     private static final String GET_ALL = """
             SELECT employee_id, first_name, last_name, hired, salary
-            FROM employee
-            WHERE department_id = 6""";
+            FROM employee JOIN department USING (department_id)
+            WHERE name = 'IT'""";
+
+    /** The JDBC connection */
     private Connection conn;
 
+    /**
+     * Set the connection up
+     * 
+     * @param ds data source to the required DBMS
+     * @throws IllegalStateException wrapping the original {@link SQLException}
+     */
     public CoderDao(DataSource ds) {
-        log.trace("called");
+        log.traceEntry();
 
         try {
             this.conn = ds.getConnection();
-        } catch (SQLException se) {
-            throw new IllegalStateException("Database issue " + se.getMessage());
+        } catch (SQLException ex) {
+            throw new IllegalStateException(ex);
         }
     }
 
+    /**
+     * Get all coders in the EMPLOYEE table
+     * 
+     * @return all coders
+     */
     public List<Coder> getAll() {
-        log.trace("called");
-        List<Coder> results = new ArrayList<>();
+        log.traceEntry();
+        List<Coder> result = new ArrayList<>();
 
         try (Statement stmt = conn.createStatement(); //
                 ResultSet rs = stmt.executeQuery(GET_ALL)) {
             while (rs.next()) {
                 LocalDate hired = rs.getDate("hired").toLocalDate();
                 Coder cur = new Coder(rs.getLong(1), rs.getString(2), rs.getString(3), hired, rs.getDouble(5));
-                results.add(cur);
+                result.add(cur);
             }
-        } catch (SQLException se) {
-            log.error("Can't get coders: " + se.getMessage());
-            throw new IllegalStateException("Database issue " + se.getMessage());
+        } catch (SQLException ex) {
+            throw new IllegalStateException(ex);
         }
 
-        return results;
+        log.debug("Read {} items", result.size());
+        return result;
     }
 
     @Override
     public void close() throws IOException {
         try {
             conn.close();
-        } catch (SQLException se) {
-            throw new IllegalStateException("Database issue " + se.getMessage());
+        } catch (SQLException ex) {
+            throw new IllegalStateException(ex);
         }
     }
 }

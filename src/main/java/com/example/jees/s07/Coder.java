@@ -7,6 +7,9 @@ package com.example.jees.s07;
 
 import java.time.LocalDate;
 
+/**
+ * JavaBean for coders in the EMPLOYEE table
+ */
 public class Coder {
     private long id;
     private String firstName;

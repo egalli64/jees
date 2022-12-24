@@ -18,21 +18,29 @@ import javax.sql.DataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Get all coders
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s07/coders")
-public class CodersSrv extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(CodersSrv.class);
+public class CoderAllServlet extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(CoderAllServlet.class);
 
+    /**
+     * JDBC data source, container managed
+     */
     @Resource(name = "jdbc/hron")
     private DataSource ds;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        log.trace("called");
+        log.traceEntry();
+
         try (CoderDao dao = new CoderDao(ds)) {
             request.setAttribute("coders", dao.getAll());
-            request.getRequestDispatcher("coders.jsp").forward(request, response);
         }
+
+        request.getRequestDispatcher("coders.jsp").forward(request, response);
     }
 }
