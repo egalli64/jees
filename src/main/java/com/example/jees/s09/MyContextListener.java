@@ -15,8 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Listen on jees web app events, on initialization the attribute start is added
- * to the servlet context
+ * Listen on web app events, add an attribute to the servlet context at startup
  */
 @WebListener
 public class MyContextListener implements ServletContextListener {
@@ -26,5 +25,10 @@ public class MyContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         log.traceEntry();
         sce.getServletContext().setAttribute("start", LocalTime.now());
+    }
+
+    @Override
+    public void contextDestroyed(ServletContextEvent sce) {
+        log.traceEntry();
     }
 }
