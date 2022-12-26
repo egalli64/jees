@@ -1,3 +1,8 @@
+/*
+ * Introduction to Jakarta Enterprise Edition - Servlet
+ * 
+ * https://github.com/egalli64/jees
+ */
 package com.example.jees.s10;
 
 import java.io.IOException;
@@ -11,6 +16,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/**
+ * Simple servlet logging its life-cycle milestones
+ */
 @SuppressWarnings("serial")
 @WebServlet("/s10/life")
 public class LifeServlet extends HttpServlet {
@@ -25,6 +33,7 @@ public class LifeServlet extends HttpServlet {
         log.traceEntry();
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         log.traceEntry();
