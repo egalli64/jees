@@ -36,25 +36,27 @@ public class Timer extends HttpServlet {
         response.setCharacterEncoding("utf-8");
 
         // 2. fill the response with static data
-        try (PrintWriter writer = response.getWriter()) {
-            writer.println("<!DOCTYPE html>");
-            writer.println("<html>");
-            writer.println("<head>");
-            writer.println("<meta charset=\"utf-8\">");
-            writer.println("<link rel=\"icon\" href=\"data:;base64,=\">");
-            writer.println("<link rel=\"stylesheet\" href=\"/jees/css/simple.css\">");
-            writer.println("<title>Hello Servlet</title>");
-            writer.println("</head>");
-            writer.println("<body>");
-            writer.println("<nav>");
-            writer.println("<a href=\"..\\index.html\">Home</a>");
-            writer.println("</nav>");
+        try (PrintWriter out = response.getWriter()) {
+            out.println("""
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="utf-8">
+                        <link rel="icon" href="data:;base64,=">
+                        <link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
+                        <title>Hello JSP</title>
+                    </head>
+                    <body>
+                        <nav>
+                            <a href="/jees/index.html">Home</a>
+                        </nav>
+                        """);
 
             // 3. put some dynamically generated data in the response
-            writer.println("<h1>" + LocalTime.now() + "</h1>");
+            out.println("<h1>" + LocalTime.now() + "</h1>");
 
-            writer.println("</body>");
-            writer.println("</html>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 }
