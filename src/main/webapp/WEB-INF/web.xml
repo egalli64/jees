@@ -8,6 +8,11 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
+    <!-- slide 6: session timeout here is specified in minutes -->
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+
     <!-- slide 7 -->
     <resource-ref>
         <res-ref-name>jdbc/hron</res-ref-name>
