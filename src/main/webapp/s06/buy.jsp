@@ -22,7 +22,7 @@
 <body>
     <h1>Buy Vinyls from <i>The Null Pointer Band</i></h1>
     <nav>
-        <a href="/jees/s06/home.html">Store home</a>
+        <a href="/jees/s06/home.jsp">Store home</a>
     </nav>
 
     <h2>Your order</h2>
