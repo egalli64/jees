@@ -7,14 +7,14 @@ package com.example.jees.s04;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * A forwarding servlet
@@ -27,7 +27,12 @@ public class Forward extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String to = request.getParameter("to");
-        log.traceEntry("called for {}", to);
+        if (to == null) {
+            log.warn("Null destination!");
+            to = "";
+        } else {
+            log.traceEntry("called for {}", to);
+        }
 
         // destination could be set here to a servlet, a jsp, a plain HTML page
         String destination = switch (to) {
@@ -36,7 +41,21 @@ public class Forward extends HttpServlet {
         default -> "/index.html";
         };
 
+        // classic alternative to switch assignment
+//        String destination;
+//        if (to.equals("servlet")) {
+//            destination = "/s02/timer";
+//        } else if (to.equals("jsp")) {
+//            destination = "/s02/timer.jsp";
+//        } else {
+//            destination = "/index.html";
+//        }
+
         log.trace("Forwarding to {}", destination);
         request.getRequestDispatcher(destination).forward(request, response);
+
+        // split the forwarding in two steps, for improved readability
+//        var dispatcher = request.getRequestDispatcher(destination);
+//        dispatcher.forward(request, response);
     }
 }
