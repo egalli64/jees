@@ -32,7 +32,12 @@ public class CheckerPlain extends HttpServlet {
             throws ServletException, IOException {
         // 1. extract parameters from the request
         String user = request.getParameter("user");
-        log.trace("Parameter user is '{}'", user);
+        if (user == null) {
+            log.info("Parameter user is null!");
+            user = "";
+        } else {
+            log.debug("Parameter user is '{}'", user);
+        }
 
         // 2. access the business layer through the service
         Set<Character> set = service.check(user);
