@@ -31,7 +31,12 @@ public class Checker extends HttpServlet {
             throws ServletException, IOException {
         // 1. extract parameters from the request
         String user = request.getParameter("user");
-        log.debug("Parameter user is '{}'", user);
+        if (user == null) {
+            log.info("Parameter user is null!");
+            user = "";
+        } else {
+            log.debug("Parameter user is '{}'", user);
+        }
 
         // 2. access the business layer through the service
         Set<Character> set = service.check(user);
@@ -42,7 +47,7 @@ public class Checker extends HttpServlet {
         // 4. pass the control to the associated JSP
         request.getRequestDispatcher("checker.jsp").forward(request, response);
         // same as above, in a more verbose way
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("checker.jsp");
+//        var dispatcher = request.getRequestDispatcher("checker.jsp");
 //        dispatcher.forward(request, response);
     }
 }
