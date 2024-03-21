@@ -2,7 +2,7 @@
     Introduction to Jakarta Enterprise Edition - Servlet
     https://github.com/egalli64/jees
  --%>
- <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +13,9 @@
 </head>
 <body>
     <h1>Hello!</h1>
-    <%@include file="backHome.html"%>
-    <p id="result">
-        The user name contains these letters: ${set}
-    </p>
+    <nav>
+        <a href="/jees/index.html">Home</a>
+    </nav>
+    <p id="result">The user name contains these letters: ${set}</p>
 </body>
 </html>
