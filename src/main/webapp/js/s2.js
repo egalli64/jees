@@ -2,7 +2,7 @@
  * Introduction to Jakarta Enterprise Edition - Servlet
  * https://github.com/egalli64/jees
  * 
- * See s02/ajax.html
+ * See m1/s2/ajax.html
  * Requires access to the DOM
  */
 
@@ -33,7 +33,7 @@ function timerResponseManager() {
 document.getElementById('btnTime').addEventListener('click', () => {
   let request = new XMLHttpRequest();
   request.onload = timerResponseManager;
-  request.open('GET', '/jees/s02/timerPlain');
+  request.open('GET', '/jees/m1/s2/timerPlain');
   request.send();
 });
 
@@ -68,6 +68,6 @@ function usersResponseManager() {
 document.getElementById('btnUsers').addEventListener('click', () => {
   let request = new XMLHttpRequest();
   request.onload = usersResponseManager;
-  request.open('GET', '/jees/s02/users');
+  request.open('GET', '/jees/m1/s2/users');
   request.send();
 });
