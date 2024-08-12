@@ -18,12 +18,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Session attribute reader (with specific timeout)
+ * Session timeout setter/getter
  */
 @SuppressWarnings("serial")
 @WebServlet("/m1/s6/timeout")
-public class SessionTimeoutSetter extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(SessionTimeoutSetter.class);
+public class SessionTimeout extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(SessionTimeout.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
