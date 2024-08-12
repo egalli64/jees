@@ -19,6 +19,7 @@
     </nav>
     <h1>
         <%
+        // this is pure Java code!
         out.print(LocalTime.now());
         %>
     </h1>
