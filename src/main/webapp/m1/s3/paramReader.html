@@ -18,17 +18,18 @@
         </nav>
     </header>
     
-    <!-- On submit a GET is generated for /jees/s03/paramReader -->
+    <!-- On submit a GET is generated for /jees/m1/s3/paramReader -->
     <form action="paramReader">
         <div>
             <!-- Parameter "name" with a single value (possibly empty) -->
-            <label>Name: <input name="name" value="Bob"></label>
+            <!-- TODO: add a default value (your name, maybe) -->
+            <label>Name: <input name="name"></label>
         </div>
         <div>
-            <!-- Parameter "colors" with [0..3] values -->
-            <label>Red <input type="checkbox" name="colors" value="red" checked></label>
-            <label>Green <input type="checkbox" name="colors" value="green" checked></label>
-            <label>Blue <input type="checkbox" name="colors" value="blue" checked></label>
+            <!-- Parameter "color" could have 0 or many values -->
+            <!-- TODO 1: add more checkboxes -->
+            <!-- TODO 2: set one or more checkboxes as checked by default -->
+            <label>Red <input type="checkbox" name="color" value="red"></label>
         </div>
         <div>
             <button>OK</button>
