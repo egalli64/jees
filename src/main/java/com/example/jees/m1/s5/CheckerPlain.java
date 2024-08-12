@@ -3,9 +3,10 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s05;
+package com.example.jees.m1.s5;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -18,12 +19,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * A simple servlet that uses a service and then pass the control to a JSP
+ * A simple servlet that uses a service and then generates a response on its own
  */
 @SuppressWarnings("serial")
-@WebServlet("/s05/checker")
-public class Checker extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(Checker.class);
+@WebServlet("/m1/s5/checkerPlain")
+public class CheckerPlain extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(CheckerPlain.class);
+
+    // reference to the checker service singleton
     private static final CheckerService service = CheckerService.getInstance();
 
     @Override
@@ -38,16 +41,18 @@ public class Checker extends HttpServlet {
             log.debug("Parameter user is '{}'", user);
         }
 
-        // 2. access the business layer through the service
+        // 2. delegate the service for the actual business logic
         Set<Character> set = service.check(user);
 
-        // 3. put the data in request attributes
-        request.setAttribute("set", set);
+        // 3. prepare the response, setting up type and encoding
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
 
-        // 4. pass the control to the associated JSP
-        request.getRequestDispatcher("checker.jsp").forward(request, response);
-        // same as above, in a more verbose way
-//        var dispatcher = request.getRequestDispatcher("checker.jsp");
-//        dispatcher.forward(request, response);
+        // 4. fill the response with data
+        try (PrintWriter writer = response.getWriter()) {
+            for (Character c : set) {
+                writer.print(c);
+            }
+        }
     }
 }

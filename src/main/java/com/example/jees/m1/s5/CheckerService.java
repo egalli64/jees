@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s05;
+package com.example.jees.m1.s5;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -12,15 +12,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * A simple service implemented as singleton - NOT production ready
+ * A simple stateless service implemented as a singleton - NOT production ready
  * 
  * @see ServletContextListener, EJB @Singleton, Spring @Service, ...
  */
 public class CheckerService {
     private static final Logger log = LogManager.getLogger(CheckerService.class);
+
+    // the single instance - delegate to the JVM to safely instantiate it
     private static final CheckerService instance = new CheckerService();
 
+    /**
+     * No one could create a service outside the class
+     */
     private CheckerService() {
+        log.traceEntry();
     }
 
     /**
@@ -39,7 +45,7 @@ public class CheckerService {
      * @return the unique (lower-cased) letters in input
      */
     public Set<Character> check(String user) {
-        log.traceEntry();
+        log.traceEntry("on {}", user);
 
         Set<Character> result = new TreeSet<>();
         if (user != null) {

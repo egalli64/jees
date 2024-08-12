@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <title>JSP &amp; request</title>
-<link rel="icon" href="data:;base64,=">
+<link rel="icon" href="data:image/x-icon;,">
 <link rel="stylesheet" href="/jees/css/simple.css">
 </head>
 <body>

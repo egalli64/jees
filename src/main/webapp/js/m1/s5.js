@@ -28,7 +28,7 @@ document.getElementById('btnCheck').onclick = () => {
   let request = new XMLHttpRequest();
   request.onload = checkedManager;
 
-  let target = '/jees/s05/checkerPlain?user=' + document.getElementById('name').value;
+  let target = '/jees/m1/s5/checkerPlain?user=' + document.getElementById('name').value;
   request.open('GET', target);
   request.send();
 };

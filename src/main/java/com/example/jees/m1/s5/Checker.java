@@ -3,10 +3,9 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s05;
+package com.example.jees.m1.s5;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -19,12 +18,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * A simple servlet that uses a service and then generates a response on its own
+ * A simple servlet that uses a service and then pass the control to a JSP
  */
 @SuppressWarnings("serial")
-@WebServlet("/s05/checkerPlain")
-public class CheckerPlain extends HttpServlet {
-    private static final Logger log = LogManager.getLogger(CheckerPlain.class);
+@WebServlet("/m1/s5/checker")
+public class Checker extends HttpServlet {
+    private static final Logger log = LogManager.getLogger(Checker.class);
+
+    // reference to the checker service singleton
     private static final CheckerService service = CheckerService.getInstance();
 
     @Override
@@ -39,18 +40,18 @@ public class CheckerPlain extends HttpServlet {
             log.debug("Parameter user is '{}'", user);
         }
 
-        // 2. access the business layer through the service
+        // 2. delegate the service for the actual business logic
         Set<Character> set = service.check(user);
 
-        // 3. prepare the response, setting its type and encoding
-        response.setContentType("text/plain");
-        response.setCharacterEncoding("utf-8");
+        // 3. put the data coming from the service in a request attribute
+        request.setAttribute("set", set);
 
-        // 4. fill the response with data
-        try (PrintWriter writer = response.getWriter()) {
-            for (Character c : set) {
-                writer.print(c);
-            }
-        }
+        // 4. pass the control to the associated JSP
+        // notice that using a relative URI, the /m1/s5 folder is assumed
+        request.getRequestDispatcher("checker.jsp").forward(request, response);
+
+        // same as above, in a more verbose way
+//        var dispatcher = request.getRequestDispatcher("checker.jsp");
+//        dispatcher.forward(request, response);
     }
 }
