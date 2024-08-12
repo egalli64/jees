@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s02;
+package com.example.jees.m1.s2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,7 +25,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * A JSON-generating servlet (quite common nowadays)
  */
 @SuppressWarnings("serial")
-@WebServlet("/s02/users")
+@WebServlet("/m1/s2/users")
 public class UsersJson extends HttpServlet {
     private static final Logger log = LogManager.getLogger(UsersJson.class);
     private final Gson gson = new Gson();

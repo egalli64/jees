@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s02;
+package com.example.jees.m1.s2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
  * A text-generating servlet (a bit too raw)
  */
 @SuppressWarnings("serial")
-@WebServlet("/s02/timerPlain")
+@WebServlet("/m1/s2/timerPlain")
 public class TimerPlain extends HttpServlet {
     private static final Logger log = LogManager.getLogger(TimerPlain.class);
 
