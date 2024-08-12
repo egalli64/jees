@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s04;
+package com.example.jees.m1.s4;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * A forwarding servlet
  */
 @SuppressWarnings("serial")
-@WebServlet("/s04/forward")
+@WebServlet("/m1/s4/forward")
 public class Forward extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Forward.class);
 
@@ -36,17 +36,17 @@ public class Forward extends HttpServlet {
 
         // destination could be set here to a servlet, a jsp, a plain HTML page
         String destination = switch (to) {
-        case "servlet" -> "/s02/timer";
-        case "jsp" -> "/s02/timer.jsp";
+        case "servlet" -> "/m1/s2/timer";
+        case "jsp" -> "/m1/s2/timer.jsp";
         default -> "/index.html";
         };
 
         // classic alternative to switch assignment
 //        String destination;
 //        if (to.equals("servlet")) {
-//            destination = "/s02/timer";
+//            destination = "/m1/s2/timer";
 //        } else if (to.equals("jsp")) {
-//            destination = "/s02/timer.jsp";
+//            destination = "/m1/s2/timer.jsp";
 //        } else {
 //            destination = "/index.html";
 //        }
