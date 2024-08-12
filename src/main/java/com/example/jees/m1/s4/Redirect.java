@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s04;
+package com.example.jees.m1.s4;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import org.apache.logging.log4j.Logger;
  * A redirecting servlet
  */
 @SuppressWarnings("serial")
-@WebServlet("/s04/redirect")
+@WebServlet("/m1/s4/redirect")
 public class Redirect extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Redirect.class);
 
