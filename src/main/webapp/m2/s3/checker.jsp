@@ -1,0 +1,22 @@
+<%-- 
+    Introduction to Jakarta Enterprise Edition - JSP
+    https://github.com/egalli64/jeep
+ --%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<%@include file="include/link.html"%>
+<title>JSP &amp; attributes</title>
+</head>
+
+<body>
+    <h1>Hello!</h1>
+    <%@include file="include/backHome.html"%>
+    <%-- JSP-EL to access the set attribute in the request --%>
+    <p>The user name contains these letters: ${set}</p>
+</body>
+
+</html>
