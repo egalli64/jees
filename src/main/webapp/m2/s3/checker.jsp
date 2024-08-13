@@ -1,6 +1,6 @@
 <%-- 
     Introduction to Jakarta Enterprise Edition - JSP
-    https://github.com/egalli64/jeep
+    https://github.com/egalli64/jees
  --%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <%@include file="/m2/include/link.html"%>
-<title>JSP &amp; attributes</title>
+<title>From servlet to JSP</title>
 </head>
 
 <body>
