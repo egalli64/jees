@@ -8,13 +8,13 @@
 
 <head>
 <meta charset="utf-8">
-<%@include file="include/link.html"%>
+<%@include file="/m2/include/link.html"%>
 <title>JSP &amp; attributes</title>
 </head>
 
 <body>
     <h1>Hello!</h1>
-    <%@include file="include/backHome.html"%>
+    <%@include file="/m2/include/backHome.html"%>
     <%-- JSP-EL to access the set attribute in the request --%>
     <p>The user name contains these letters: ${set}</p>
 </body>
