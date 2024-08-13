@@ -1,9 +1,9 @@
 /*
- * Introduction to Jakarta Enterprise Edition - Servlet
+ * Introduction to Jakarta Enterprise Edition - Servlet & JSP
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s06;
+package com.example.jees.m2.s8.npb;
 
 /**
  * A simple JavaBean

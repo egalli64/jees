@@ -1,5 +1,5 @@
 <%-- 
-    Introduction to Jakarta Enterprise Edition - Servlet
+    Introduction to Jakarta Enterprise Edition - Servlet and JSP
     https://github.com/egalli64/jees
  --%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
@@ -9,13 +9,12 @@
 <head>
 <meta charset="utf-8">
 <title>The Null Pointer Band</title>
-<link rel="icon" href="data:;base64,=">
-<link rel="stylesheet" href="/jees/css/simple.css">
+<%@include file="/m2/include/link.html"%>
 </head>
 <body>
     <h1>The Null Pointer Band Music Store</h1>
     <nav>
-        <span><a href="/jees/index.html">Home</a></span>
+        <span><a href="/jees/index.html#m2">Home</a></span>
         <%-- if user is in the session scope, more commands are available --%>
         <c:if test="${not empty sessionScope.user}">
             <span><a href="logout">logout</a></span>

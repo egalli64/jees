@@ -1,9 +1,9 @@
 /*
- * Introduction to Jakarta Enterprise Edition - Servlet
+ * Introduction to Jakarta Enterprise Edition - Servlet & JSP
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s06;
+package com.example.jees.m2.s8.npb;
 
 import java.io.IOException;
 
@@ -21,10 +21,11 @@ import org.apache.logging.log4j.Logger;
  * Login servlet
  */
 @SuppressWarnings("serial")
-@WebServlet("/s06/login")
+@WebServlet("/m2/s8/npb/login")
 public class Login extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Login.class);
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");

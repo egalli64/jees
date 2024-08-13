@@ -1,9 +1,9 @@
 /*
- * Introduction to Jakarta Enterprise Edition - Servlet
+ * Introduction to Jakarta Enterprise Edition - Servlet & JSP
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s06;
+package com.example.jees.m2.s8.npb;
 
 import java.io.IOException;
 import java.util.Map;
@@ -22,10 +22,11 @@ import org.apache.logging.log4j.Logger;
  * Buy servlet
  */
 @SuppressWarnings("serial")
-@WebServlet("/s06/buy")
+@WebServlet("/m2/s8/npb/buy")
 public class Buy extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Buy.class);
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         log.traceEntry();
@@ -36,7 +37,6 @@ public class Buy extends HttpServlet {
         if (orders != null) {
             request.setAttribute("albums", orders.values());
         }
-        session.invalidate();
 
         request.getRequestDispatcher("done.jsp").forward(request, response);
     }

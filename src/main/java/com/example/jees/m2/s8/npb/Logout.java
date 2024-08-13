@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.s06;
+package com.example.jees.m2.s8.npb;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import org.apache.logging.log4j.Logger;
  * Logout servlet
  */
 @SuppressWarnings("serial")
-@WebServlet("/s06/logout")
+@WebServlet("/m2/s8/npb/logout")
 public class Logout extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Logout.class);
 
