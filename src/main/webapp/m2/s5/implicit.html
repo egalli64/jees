@@ -1,0 +1,33 @@
+<!-- 
+    Introduction to Jakarta Enterprise Edition - Servlet & JSP
+    https://github.com/egalli64/jees
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Parameter passing</title>
+<link rel="stylesheet" href="/jees/css/simple.css">
+<link rel="icon" href="data:image/x-icon;,">
+</head>
+<body>
+    <h1>Parameter passing</h1>
+
+    <nav>
+        <a href="/jees/index.html#m2">Home</a>
+    </nav>
+
+    <h2>Send a request by form</h2>
+
+    <!-- Submit a GET request for /jees/m2/s5/implicit -->
+    <form action="implicit">
+        <label>User: <input name="name" placeholder="Enter your name" value="Tom"></label>
+        <div>
+            <label><input type="checkbox" name="colors" value="red" checked>red</label>
+            <label><input type="checkbox" name="colors" value="green" checked>green</label>
+            <label><input type="checkbox" name="colors" value="blue">blue</label>
+        </div>
+        <button>Go!</button>
+    </form>
+</body>
+</html>
