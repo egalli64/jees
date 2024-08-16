@@ -20,6 +20,6 @@
         </nav>
     </header>
 
-    <h2>The timeout on this session is set to: ${timeout}</h2>
+    <h2>The timeout on this session is set to ${timeout} seconds</h2>
 </body>
 </html>
