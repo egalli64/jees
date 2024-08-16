@@ -1,5 +1,5 @@
 /*
- * Introduction to Jakarta Enterprise Edition - Servlet
+ * Introduction to Jakarta Enterprise Edition - Servlet and JSP
  * 
  * https://github.com/egalli64/jees
  */
@@ -19,6 +19,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * A simple servlet that uses a service and then pass the control to a JSP
+ * <ul>
+ * <li>A parameter "user" is expected
+ * <li>An attribute "set" is generated
+ * <li>The control is passed to the checker JSP in the same folder
  */
 @SuppressWarnings("serial")
 @WebServlet("/m1/s5/checker")
