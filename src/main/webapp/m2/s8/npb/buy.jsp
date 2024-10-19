@@ -1,5 +1,5 @@
 <%-- 
-    Introduction to Jakarta Enterprise Edition - Servlet nad JSP
+    Introduction to Jakarta Enterprise Edition - Servlet and JSP
     https://github.com/egalli64/jees
  --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
