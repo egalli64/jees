@@ -44,7 +44,7 @@ public class Timer extends HttpServlet {
                         <meta charset="utf-8">
                         <link rel="icon" href="data:;base64,=">
                         <link rel="stylesheet" type="text/css" href="/jees/css/simple.css">
-                        <title>Hello JSP</title>
+                        <title>Hello Servlet</title>
                     </head>
                     <body>
                         <nav>
