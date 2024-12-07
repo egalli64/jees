@@ -7,10 +7,19 @@ body {
     background-color: #fafaee;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
 }
 
 header {
     margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    margin: 2vw;
+}
+
+section {
+    flex: auto;
 }
