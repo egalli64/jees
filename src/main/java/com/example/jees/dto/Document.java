@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jees
  */
-package com.example.jees.bean;
+package com.example.jees.dto;
 
 /**
  * A simple JavaBean with a JavaBean within
