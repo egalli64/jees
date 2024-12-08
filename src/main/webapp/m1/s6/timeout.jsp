@@ -16,7 +16,7 @@
     <header>
         <h1>Timeout information</h1>
         <nav>
-            <a href="/jees/index.html">Home</a>
+            <a href="/jees/index.html#session">Home</a>
         </nav>
     </header>
 
