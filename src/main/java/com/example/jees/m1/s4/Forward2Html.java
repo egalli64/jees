@@ -28,9 +28,9 @@ public class Forward2Html extends HttpServlet {
             throws ServletException, IOException {
         final String destination = "hello.html";
 
-        log.traceEntry(destination);
+        log.traceEntry("Forwarding to {}", destination);
 
-        request.getRequestDispatcher("hello.html").forward(request, response);
+        request.getRequestDispatcher(destination).forward(request, response);
 
         // split in two steps, for improved readability
 //        var dispatcher = request.getRequestDispatcher(destination);
