@@ -1,5 +1,5 @@
 /*
- * Introduction to Jakarta Enterprise Edition - Servlet & JSP
+ * Introduction to Jakarta Enterprise Edition
  * 
  * https://github.com/egalli64/jees
  */
@@ -17,8 +17,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.example.jees.bean.Document;
-import com.example.jees.bean.User;
+import com.example.jees.dto.Document;
+import com.example.jees.dto.Person;
+import com.example.jees.dto.User;
 
 /**
  * Generate attributes to be put in the view by JSP Expression Language
@@ -31,14 +32,21 @@ public class ExpressionLanguage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        // JavaBean
         Document doc = new Document("Hello", new User("Tom", 42));
         request.setAttribute("doc", doc);
-        log.trace("Bean stored as request attribute: {}", doc);
+        log.trace("JavaBean stored as request attribute: {}", doc);
 
+        // record
+        Person bob = new Person("Bob", 24);
+        request.setAttribute("bob", bob);
+        log.trace("Record stored as request attribute: {}", bob);
+
+        // Collection
         List<String> names = List.of("Tom", "Bob", "Kim");
         log.trace(names);
         request.setAttribute("names", names);
-        log.trace("List stored as request attribute: {}", names);
+        log.trace("A string list stored as request attribute: {}", names);
 
         request.getRequestDispatcher("el.jsp").forward(request, response);
     }
