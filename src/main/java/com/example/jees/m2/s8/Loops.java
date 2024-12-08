@@ -1,5 +1,5 @@
 /*
- * Introduction to Jakarta Enterprise Edition - Servlet & JSP
+ * Introduction to Jakarta Enterprise Edition
  * 
  * https://github.com/egalli64/jees
  */
@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.example.jees.bean.User;
+import com.example.jees.dto.User;
 
 /**
  * Enrich the request with a few attributes then pass the control to a JSP
