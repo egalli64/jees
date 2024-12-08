@@ -1,5 +1,5 @@
 /*
- * Introduction to Jakarta Enterprise Edition - Servlet
+ * Introduction to Jakarta Enterprise Edition
  * 
  * https://github.com/egalli64/jees
  */
@@ -12,7 +12,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.example.jees.bean.User;
+import com.example.jees.dto.User;
 import com.google.gson.Gson;
 
 import jakarta.servlet.ServletException;
