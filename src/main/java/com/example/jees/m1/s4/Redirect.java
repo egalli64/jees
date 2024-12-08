@@ -26,7 +26,9 @@ public class Redirect extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        log.traceEntry("redirect to Apache Tomcat");
-        response.sendRedirect("https://tomcat.apache.org/");
+        final String destination = "../s2/timer";
+
+        log.traceEntry("Redirecting to {}", destination);
+        response.sendRedirect(destination);
     }
 }
