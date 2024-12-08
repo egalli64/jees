@@ -26,7 +26,7 @@ public class Forward2Jsp extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        final String destination = "/m1/s2/timer.jsp";
+        final String destination = "/m2/s2/timer.jsp";
 
         log.traceEntry("Forwarding to {}", destination);
 

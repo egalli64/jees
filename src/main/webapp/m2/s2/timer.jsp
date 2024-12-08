@@ -15,7 +15,7 @@
 <body>
     <!-- a HTML comment -->
     <nav>
-        <a href="/jees/index.html#m2">Home</a>
+        <a href="/jees/index.html">Home</a>
     </nav>
     <h1>
         <%
